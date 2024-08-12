@@ -1,1 +1,1 @@
-## Frontend for VideoTube - video streaming platform
+## Frontend for StreamTube - video streaming platform
