@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Navbar from './components/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -6,7 +7,7 @@ function App() {
   return (
     <>
     <div className='bg-white'>
-      <h1 className='text-center font-bold text-black'>VideoTube frontend project</h1>
+      <Navbar />
     </div>
     </>
   )
