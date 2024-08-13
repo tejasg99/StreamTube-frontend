@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-    <div className='bg-white'>
+    <div className='min-h-screen w-screen bg-slate-800'>
      <Header />
     </div>
     </>
