@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 
-const Search = () => {
+function Search() {
     const [query, setQuery] = useState("");
 
     const handleInputChange = (e) => {
@@ -20,7 +20,7 @@ const Search = () => {
         <input
           type="text"
           name="text"
-          className="input border rounded-2xl rounded-r-none bg-slate-100 text-black py-[2px] px-4 w-[300px] h-[30px] "
+          className="input border rounded-2xl rounded-r-none bg-slate-100 text-black py-[2px] px-4 w-[400px] h-[30px] "
           placeholder="Search"
           value={query}
           onChange={handleInputChange}
