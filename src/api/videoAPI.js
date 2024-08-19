@@ -27,3 +27,15 @@ export const publishVideo = async (videoData) => {
         throw error?.response?.data?.error;
     }
 }
+
+export const togglePublishStatus = async (videoId) => {
+    try {
+        const { data } = await instance.patch(`/videos/toggle/publish/${videoId}`)
+        toast.success(data?.message)
+        return data?.data
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}
+
