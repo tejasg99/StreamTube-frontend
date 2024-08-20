@@ -57,3 +57,14 @@ export const updateVideo = async (videoId, updateData) => {
         throw error?.response?.data?.error;
     }
 }
+
+export const deleteVideo = async (videoId) => {
+    try {
+        const { data } = await instance.delete(`/videos/${videoId}`)
+        toast.success(data?.message);
+        return data?.message;
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}
