@@ -39,3 +39,21 @@ export const togglePublishStatus = async (videoId) => {
     }
 }
 
+export const updateVideo = async (videoId, updateData) => {
+    const formData = new formData();
+
+    if(updateData.thumbnail) {
+        formData.append("thumbnail", updateData.thumbnail)
+    }
+    formData.append("title", updateData.title)
+    formData.append("description", updateData.description)
+
+    try {
+        const { data } = await instance.patch(`/videos/${videoId}`, formData)
+        toast.success(data?.message)
+        return data?.data
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}
