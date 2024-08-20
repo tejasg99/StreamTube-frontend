@@ -68,3 +68,38 @@ export const deleteVideo = async (videoId) => {
         throw error?.response?.data?.error;
     }
 }
+
+export const getVideoById = async (videoId) => {
+    try {
+        const { data } = await instance.get(`/videos/${videoId}`)
+        toast.success(data?.message)
+        return data?.data
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}
+
+export const getAllVideos = async (
+    page = null,
+    userId = null,
+    sortBy = null,
+    sortType = null,
+    query = null,
+    limit = null
+) => {
+    try {
+        const url = new URL(`${API_URL}/videos`)
+        if(userId) url.searchParams.set("userId", userId)
+        if(page) url.searchParams.set("page", page)
+        if(sortBy) url.searchParams.set("sortBy", sortBy)
+        if(sortType) url.searchParams.set("sortType", sortType)
+        if(query) url.searchParams.set("query", query)
+        if(limit) url.searchParams.set("limit", limit)
+        const response = await instance.get(url.href + "/")
+        return response?.data?.data
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}
