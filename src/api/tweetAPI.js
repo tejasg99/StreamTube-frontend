@@ -30,4 +30,16 @@ export const updateTweet = async (tweetId, tweetContent) => {
     }
 }
 
+export const deleteTweet = async (tweetId) => {
+    try {
+        const { data } = await instance.delete(`/tweets/${tweetId}`)
+        toast.success(data?.message)
+        return data?.data;
+    } catch (error) {
+        toast.error(error?.response?.data?.error)
+        throw error?.response?.data?.error;
+    }
+}
+
+
 
