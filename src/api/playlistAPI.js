@@ -19,3 +19,24 @@ export const createPlaylist = async (playlistData) => {
     }
 }
 
+export const updatePlaylist = async (playlistData, playlistId) => {
+    try {
+        const { data } = await instance.patch(`/playlist/${playlistId}`, playlistData)
+        toast.success(data?.message);
+        return data?.data;
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}
+
+export const addVideoToPlaylist = async (videoId, playlistId) => {
+    try {
+        const { data } = await instance.patch(`/playlist/add/${videoId}/${playlistId}`)
+        toast.success(data?.message)
+        return data?.data;
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}
