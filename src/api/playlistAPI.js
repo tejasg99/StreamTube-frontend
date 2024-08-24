@@ -61,3 +61,25 @@ export const getPlaylistById = async (playlistId) => {
         throw error?.response?.data?.error;
     }
 }
+
+export const getUserPlaylists = async (userId) => {
+    try {
+        const { data } = await instance.get(`/playlist/user/${userId}`)
+        toast.success(data?.message);
+        return data?.data;
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}
+
+export const deletePlaylist = async (playlistId) => {
+    try {
+        const { data } = await instance.delete(`/playlist/${playlistId}`)
+        toast.success(data?.message);
+        return data?.data;
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}
