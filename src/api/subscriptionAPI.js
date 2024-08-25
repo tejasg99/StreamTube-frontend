@@ -18,3 +18,12 @@ export const toggleSubscription = async (channelId) => {
         throw error?.response?.data?.error;
     }
 }
+
+export const getChannelSubscribers = async (channelId) => {
+    try {
+        const { data } = await instance.get(`/subscriptions/c/${channelId}`)
+        return data?.data;
+    } catch (error) {
+        throw error?.response?.data?.error;
+    }
+}
