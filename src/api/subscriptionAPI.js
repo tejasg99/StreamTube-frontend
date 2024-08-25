@@ -27,3 +27,12 @@ export const getChannelSubscribers = async (channelId) => {
         throw error?.response?.data?.error;
     }
 }
+
+export const getSubscribedChannels = async (subscriberId) => {
+    try {
+        const { data } = await instance.get(`/subscriptions/u/${subscriberId}`)
+        return data?.data;
+    } catch (error) {
+        throw error?.response?.data?.error;
+    }
+}
