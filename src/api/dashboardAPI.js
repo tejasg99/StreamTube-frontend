@@ -11,7 +11,16 @@ const instance = axios.create({
 export const getChannelStats = async (channelId) => {
     try {
         const { data } = await instance.get(`/dashboard/stats/${channelId}`)
-        toast.success(data?.message)
+        return data?.data;
+    } catch (error) {
+        toast.error(error?.response?.data?.error)
+        throw error?.response?.data?.error;
+    }
+}
+
+export const getChannelVideos = async (channelId) => {
+    try {
+        const { data } = await instance.get(`/dashboard/videos/${channelId}`)
         return data?.data;
     } catch (error) {
         toast.error(error?.response?.data?.error)
