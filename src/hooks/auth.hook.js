@@ -18,7 +18,29 @@ export const useLogin = () => {
     })
 }
 
-export const useLogout = () => {}
-export const useRegister = () => {}
-export const useChangePassword = () => {}
-export const useCurrentUser = () => {}
+export const useLogout = () => {
+    return useMutation({
+        mutationFn: () => logout(),
+    })
+}
+
+export const useRegister = () => {
+    return useMutation({
+        mutationFn: (user) => register(user), 
+    })
+}
+
+export const useChangePassword = () => {
+    return useMutation({
+        mutationFn: (data) => changePassword(data),
+    })
+}
+
+export const useCurrentUser = () => {
+    return useQuery({
+        queryKey: ["currentUser"],
+        queryFn: currentUser(),
+        staleTime: 1000*60*5,
+        retry: 1,
+    })
+}
