@@ -30,3 +30,29 @@ export const useAllVideos = (options = {}) => {
         staleTime: 1000*60*5,
     });
 }
+
+export const useGetVideoById = (videoId) => {
+    const queryClient = useQueryClient();
+
+    return useQuery({
+        queryKey: ["video", videoId],
+        queryFn: () => getVideoById(videoId),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["watchHistory"]})
+        },
+        staleTime: 1000*60*2,
+    })
+}
+
+export const usePublishVideo = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (data) => publishVideo(data),
+        onSuccess: () => {
+            queryClient.invalidateQueries({
+                queryKey: ["channelStats"],
+            });
+            queryClient.invalidateQueries({ queryKey: ["channelVideos"] })
+        }
+    })
+}
