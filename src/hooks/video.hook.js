@@ -78,3 +78,15 @@ export const useUpdateVideo = () => {
         },
     });
 }
+
+export const useDeleteVideo = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (videoId) => deleteVideo(videoId),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["videos"]})
+            queryClient.invalidateQueries({ queryKey: ["channelVideos"]})
+            queryClient.invalidateQueries({ queryKey: ["channelStats"]})
+        },
+    });
+}
