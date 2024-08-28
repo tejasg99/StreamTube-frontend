@@ -56,3 +56,25 @@ export const usePublishVideo = () => {
         }
     })
 }
+
+export const useTogglePublishStatus = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (videoId) => togglePublishStatus(videoId),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["videos"]})
+            queryClient.invalidateQueries({ queryKey: ["channelVideos"]})
+        },
+    });
+}
+
+export const useUpdateVideo = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: ({videoId, data}) => updateVideo(videoId, data),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["videos"]})
+            queryClient.invalidateQueries({ queryKey: ["channelVideos"]})
+        },
+    });
+}
