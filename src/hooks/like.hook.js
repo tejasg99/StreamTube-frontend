@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
 import {
     toggleCommentLike,
@@ -34,4 +35,11 @@ export const useToggleLike = (type) => {
             }
         })
     }
+}
+
+export const useGetLikedVideos = () => {
+    return useQuery({
+        queryKey: ["likedVideos"],
+        queryFn: () => getLikedVideos(),
+    })
 }
