@@ -25,3 +25,13 @@ export const useUpdateTweet = () => {
         }
     })
 }
+
+export const useDeleteTweet = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (tweetId) => deleteTweet(tweetId),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["tweets"]})
+        }
+    })
+}
