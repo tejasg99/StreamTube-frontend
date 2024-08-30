@@ -35,3 +35,24 @@ export const useDeleteTweet = () => {
         }
     })
 }
+
+export const useGetUserTweets = (userId) => {
+    return useInfiniteQuery({
+        queryKey: ["tweets", userId],
+        queryFn: ({pageParam = 1}) => {
+            if(userId === null || userId === undefined){
+                return Promise.resolve({ docs: [], hasNextPage: false});
+            }
+            return getUserTweets({pageParam, userId})
+        },
+        getNextPageParam: (lastPage) => {
+            if(lastPage.hasNextPage) {
+                return lastPage.nextPage;
+            }
+            return undefined;
+        },
+        staleTime: 1000*60*5,
+        retry: 2,
+        enabled: !!userId, 
+    })
+}
