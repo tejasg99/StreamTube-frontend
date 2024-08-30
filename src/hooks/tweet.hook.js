@@ -15,3 +15,13 @@ export const useCreateTweet = () => {
         }
     })
 }
+
+export const useUpdateTweet = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: ({tweetId, updateContent}) => updateTweet(tweetId, {content: updateContent}),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["tweets"]})
+        }
+    })
+}
