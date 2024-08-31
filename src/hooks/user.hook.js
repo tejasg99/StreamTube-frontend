@@ -33,3 +33,13 @@ export const useUpdateAccountDetails = () => {
         },
     });
 }
+
+export const useUpdateAvatar = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (avatarData) => updateAvatar(avatarData),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["channelInfo"]});
+        }
+    })
+}
