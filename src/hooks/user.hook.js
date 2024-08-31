@@ -17,8 +17,19 @@ export const useGetWatchHistory = () => {
 
 export const useGetUserChannelProfile = (username) => {
     return useQuery({
-        queryKey: ["userChannelProfile", username],
+        queryKey: ["channelInfo", username],
         queryFn: () => getUserChannelProfile(username),
         refetchOnWindowFocus: true,
+    });
+}
+
+export const useUpdateAccountDetails = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (updateData) => updateAccountDetails(updateData),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["channelInfo"]});
+            queryClient.invalidateQueries({ queryKey: ["currentUser"]});
+        },
     });
 }
