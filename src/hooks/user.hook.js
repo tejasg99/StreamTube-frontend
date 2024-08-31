@@ -43,3 +43,13 @@ export const useUpdateAvatar = () => {
         }
     })
 }
+
+export const useUpdateCoverImage = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (coverImageData) => updateCoverImage(coverImageData),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["channelInfo"]});
+        }
+    })
+}
