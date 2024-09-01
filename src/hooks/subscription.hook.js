@@ -16,3 +16,11 @@ export const useToggleSubscription = () => {
         }
     })
 }
+
+export const useGetChannelSubscribers = (channelId) => {
+    return useQuery({
+        queryKey: ["channelSubscribers", channelId],
+        queryFn: () => getChannelSubscribers(channelId),
+        staleTime: 1000*60*5,
+    })
+}
