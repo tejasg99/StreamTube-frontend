@@ -24,3 +24,11 @@ export const useGetChannelSubscribers = (channelId) => {
         staleTime: 1000*60*5,
     })
 }
+
+export const useGetSubscribedChannels = (subscriberId) => {
+    return useQuery({
+        queryKey: ["subscribedChannels", subscriberId],
+        queryFn: () => getSubscribedChannels(subscriberId),
+        staleTime: 1000*60*5,
+    })
+}
