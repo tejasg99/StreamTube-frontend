@@ -43,7 +43,7 @@ export const addVideoToPlaylist = async (videoId, playlistId) => {
 
 export const removeVideoFromPlaylist = async (videoId, playlistId) => {
     try {
-        const { data } = await instance.patch(`/playlist/add/${videoId}/${playlistId}`)
+        const { data } = await instance.patch(`/playlist/remove/${videoId}/${playlistId}`);
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
