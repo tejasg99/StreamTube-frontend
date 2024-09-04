@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { IconContext } from 'react-icons'
 import { IoHomeSharp } from "react-icons/io5";
+import Footer from './Footer/Footer';
 
 function Sidebar() {
 
@@ -14,7 +15,7 @@ function Sidebar() {
         },
     ]
   return (
-    <div className='h-[92vh] bg-slate-900'>
+    <div className='h-[92vh] bg-slate-900 flex flex-col justify-between'>
       <IconContext.Provider value={{ color: "white", className: "w-5 h-5" }}>
         <ul className='flex flex-col gap-1'>
             {listItems.map((item, index)=> item.active ? (
@@ -26,6 +27,7 @@ function Sidebar() {
                 </li>
             ): null )}
         </ul>
+        <Footer />
       </IconContext.Provider>
     </div>
   )
