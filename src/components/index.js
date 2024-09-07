@@ -4,6 +4,8 @@ import Sidebar from "./Sidebar.jsx";
 import Footer from "./Footer/Footer.jsx";
 import Button from "./Button.jsx"
 import SpecialButton from "./SpecialButton.jsx";
+import Input from "./Input.jsx";
+import LoginForm from "./LoginForm.jsx"
 
 export {
     Header,
@@ -11,5 +13,7 @@ export {
     Sidebar,
     Footer,
     Button,
-    SpecialButton
+    SpecialButton,
+    Input,
+    LoginForm,
 }
