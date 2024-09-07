@@ -6,6 +6,7 @@ import Button from "./Button.jsx"
 import SpecialButton from "./SpecialButton.jsx";
 import Input from "./Input.jsx";
 import LoginForm from "./LoginForm.jsx"
+import LoginPopup from "./LoginPopup.jsx";
 
 export {
     Header,
@@ -16,4 +17,5 @@ export {
     SpecialButton,
     Input,
     LoginForm,
+    LoginPopup,
 }
