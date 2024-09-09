@@ -8,6 +8,8 @@ import Input from "./Input.jsx";
 import LoginForm from "./LoginForm.jsx"
 import LoginPopup from "./LoginPopup.jsx";
 import AuthLayout from "./AuthLayout.jsx";
+import { TitleInput, DescriptionInput } from "./TitleAndDescriptionInput.jsx";
+import DropDown from "./DropDown.jsx";
 
 export {
     Header,
@@ -20,4 +22,7 @@ export {
     LoginForm,
     LoginPopup,
     AuthLayout,
+    TitleInput,
+    DescriptionInput,
+    DropDown
 }
