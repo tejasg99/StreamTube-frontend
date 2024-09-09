@@ -19,5 +19,5 @@ export {
     Input,
     LoginForm,
     LoginPopup,
-    AuthLayout
+    AuthLayout,
 }
