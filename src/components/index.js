@@ -15,6 +15,8 @@ import Dropzone from "./DropZone.jsx";
 import VideoCard from "./VideoCard.jsx";
 import VideoPreviewCard from "./VideoPreviewCard.jsx";
 import VideoForm from "./VideoForm.jsx";
+import ProgressBar from "./ProgressBar.jsx";
+import DeletePopup from "./DeletePopup.jsx";
 
 export {
     Header,
@@ -35,4 +37,6 @@ export {
     VideoCard,
     VideoPreviewCard,
     VideoForm,
+    ProgressBar,
+    DeletePopup,
 }
