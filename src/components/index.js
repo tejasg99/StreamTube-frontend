@@ -12,6 +12,8 @@ import { TitleInput, DescriptionInput } from "./TitleAndDescriptionInput.jsx";
 import DropDown from "./DropDown.jsx";
 import VideoPlayer from "./VideoPlayer.jsx"
 import Dropzone from "./DropZone.jsx";
+import VideoCard from "./VideoCard.jsx";
+import VideoPreviewCard from "./VideoPreviewCard.jsx"
 
 export {
     Header,
@@ -29,4 +31,6 @@ export {
     DropDown,
     VideoPlayer,
     Dropzone,
+    VideoCard,
+    VideoPreviewCard
 }
