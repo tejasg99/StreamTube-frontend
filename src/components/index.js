@@ -13,7 +13,8 @@ import DropDown from "./DropDown.jsx";
 import VideoPlayer from "./VideoPlayer.jsx"
 import Dropzone from "./DropZone.jsx";
 import VideoCard from "./VideoCard.jsx";
-import VideoPreviewCard from "./VideoPreviewCard.jsx"
+import VideoPreviewCard from "./VideoPreviewCard.jsx";
+import VideoForm from "./VideoForm.jsx";
 
 export {
     Header,
@@ -32,5 +33,6 @@ export {
     VideoPlayer,
     Dropzone,
     VideoCard,
-    VideoPreviewCard
+    VideoPreviewCard,
+    VideoForm,
 }

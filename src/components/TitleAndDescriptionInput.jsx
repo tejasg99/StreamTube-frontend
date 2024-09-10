@@ -20,7 +20,7 @@ export const TitleInput = forwardRef(
 });
 
 export const DescriptionInput = forwardRef(
-    ({ description, setDescription, props }, ref) => {
+    ({ description, setDescription, ...props }, ref) => {
     return (
         <div className="w-full">
             <label htmlFor="description" className="mb-1 inline-block">
