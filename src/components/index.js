@@ -20,6 +20,7 @@ import DeletePopup from "./DeletePopup.jsx";
 import ChannelSubscribed from "./ChannelSubscribed.jsx"
 import SubscribeButton from "./SubscribeButton.jsx";
 import Subscriber from "./Subscriber.jsx";
+import VideoStats from "./VideoStats.jsx"
 
 export {
     Header,
@@ -45,4 +46,5 @@ export {
     ChannelSubscribed,
     SubscribeButton,
     Subscriber,
+    VideoStats,
 }
