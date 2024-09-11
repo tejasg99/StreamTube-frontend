@@ -17,6 +17,9 @@ import VideoPreviewCard from "./VideoPreviewCard.jsx";
 import VideoForm from "./VideoForm.jsx";
 import ProgressBar from "./ProgressBar.jsx";
 import DeletePopup from "./DeletePopup.jsx";
+import ChannelSubscribed from "./ChannelSubscribed.jsx"
+import SubscribeButton from "./SubscribeButton.jsx";
+import Subscriber from "./Subscriber.jsx";
 
 export {
     Header,
@@ -39,4 +42,7 @@ export {
     VideoForm,
     ProgressBar,
     DeletePopup,
+    ChannelSubscribed,
+    SubscribeButton,
+    Subscriber,
 }
