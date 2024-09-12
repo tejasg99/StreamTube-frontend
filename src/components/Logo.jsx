@@ -11,7 +11,7 @@ function Logo({ className, inline = false, mobile = false }) {
           mobile && "hidden md:block"
         }`}
       >
-        <div className=" text-2xl">Streamify</div>
+        <div className=" text-2xl">StreamTube</div>
       </div>
     </div>
   );
