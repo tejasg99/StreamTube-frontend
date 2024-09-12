@@ -1,34 +1,34 @@
-import React, { useState } from "react";
-import { IoSearchSharp } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { FaSearch } from "react-icons/fa";
 
 function Search() {
-    const [query, setQuery] = useState("");
+    const { register, handleSubmit } = useForm();
+    const navigate = useNavigate();
 
-    const handleInputChange = (e) => {
-        setQuery(e.target.value)
-    };
-
-    const onSubmit = (e) => {
-      e.preventDefault();
-      console.log("Search query: ", query);
+    const onSubmit = (data) => {
+      console.log("Search query: ", data?.query);
+      navigate(`/search/${data?.query}`);
     }
     
-
   return (
-    <form onSubmit={onSubmit}>
-      <div className="flex justify-between items-center p-2">
+    <form onSubmit={handleSubmit(onSubmit)}
+    className="flex items-center w-full max-w-lg"
+    >
+      <div className="relative flex-grow">
         <input
-          type="text"
-          name="text"
-          className="input border rounded-2xl rounded-r-none bg-slate-100 text-black py-[2px] px-4 w-[400px] h-[30px] "
+          className="w-full border border-gray-500 rounded-l-3xl bg-transparent py-2 pl-10 pr-3 placeholder-white outline-none focus:border-blue-400"
           placeholder="Search"
-          value={query}
-          onChange={handleInputChange}
+          {...register("query", { required: true})}
         />
-        <button type="submit">
-          <IoSearchSharp className="bg-blue-700 text-white w-9 h-[30px] pt-[2px] px-2 rounded-2xl rounded-l-none"/>
-        </button>
+        <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
       </div>
+      <button 
+      type="submit"
+      className="bg-gray-700 text-white rounded-r-3xl px-4 py-2 hover:bg-gray-500 transition-colors"
+      >
+        Search
+      </button>
     </form>
   );
 };
