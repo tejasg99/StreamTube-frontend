@@ -22,6 +22,7 @@ import SubscribeButton from "./SubscribeButton.jsx";
 import Subscriber from "./Subscriber.jsx";
 import VideoStats from "./VideoStats.jsx";
 import Logo from "./Logo.jsx";
+import Like from "./VideoDetails/Like.jsx";
 
 export {
     Header,
@@ -49,4 +50,5 @@ export {
     Subscriber,
     VideoStats,
     Logo,
+    Like,
 }
