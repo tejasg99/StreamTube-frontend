@@ -11,10 +11,11 @@ const instance = axios.create({
 export const getVideoComments = async (
     videoId = null,
     page = null,
-    limit = null
+    limit = null,
+    authenticated = true,
 ) => {
     try {
-        const url = new URL(`${API_URL}/comments/${videoId}`)
+        const url = new URL(`${API_URL}/comments/${videoId}${authenticated ? "" : "?guest=true"}`)
 
         if(page) url.searchParams.set("page", page)
         if(limit) url.searchParams.set("limit", limit)

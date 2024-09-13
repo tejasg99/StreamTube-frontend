@@ -5,9 +5,9 @@ import LoginPopup from "../index";
 import { IconContext } from "react-icons";
 import { FaRegThumbsUp, FaThumbsUp } from "react-icons/fa";
 
-function Like({ id, isliked, likesCount, type, className, iconSize }) {
+function Like({ id, isLiked, likesCount, type, className, iconSize }) {
     const authStatus = useSelector((state) => state.auth.authStatus);
-    const [isLikedState, setIsLikedState] = useState(isliked)
+    const [isLikedState, setIsLikedState] = useState(isLiked)
     const [likesCountState, setLikesCountState] = useState(likesCount)
     const [showLoginPopup, setShowLoginPopup] = useState(false)
 
@@ -16,9 +16,9 @@ function Like({ id, isliked, likesCount, type, className, iconSize }) {
     )
 
     useEffect(() => {
-        setIsLikedState(isliked);
+        setIsLikedState(isLiked);
         setLikesCountState(likesCount);
-    }, [isliked, likesCount])
+    }, [isLiked, likesCount])
     
     const handleLike = async () => {
         if(!authStatus) {

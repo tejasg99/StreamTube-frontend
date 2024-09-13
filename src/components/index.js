@@ -23,6 +23,7 @@ import Subscriber from "./Subscriber.jsx";
 import VideoStats from "./VideoStats.jsx";
 import Logo from "./Logo.jsx";
 import Like from "./VideoDetails/Like.jsx";
+import Comment from "./VideoDetails/Comment.jsx";
 
 export {
     Header,
@@ -51,4 +52,5 @@ export {
     VideoStats,
     Logo,
     Like,
+    Comment,
 }
