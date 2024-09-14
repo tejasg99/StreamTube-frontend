@@ -24,6 +24,10 @@ import VideoStats from "./VideoStats.jsx";
 import Logo from "./Logo.jsx";
 import Like from "./VideoDetails/Like.jsx";
 import Comment from "./VideoDetails/Comment.jsx";
+import CommentBox from "./VideoDetails/CommentBox.jsx";
+import UploadVideo from "./UploadVideo/UploadVideo.jsx";
+import Tweet from "./Tweet/Tweet.jsx";
+import TweetInput from "./Tweet/TweetInput.jsx";
 
 export {
     Header,
@@ -53,4 +57,8 @@ export {
     Logo,
     Like,
     Comment,
+    CommentBox,
+    UploadVideo,
+    Tweet,
+    TweetInput,
 }
