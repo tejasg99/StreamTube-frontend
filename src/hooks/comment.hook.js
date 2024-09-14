@@ -6,10 +6,10 @@ import {
     deleteComment 
 } from "../api/commentAPI";
 
-export const useGetVideoComments = (videoId) => {
+export const useGetVideoComments = (videoId, authenticated) => {
     return useInfiniteQuery({
         queryKey: ["comments", videoId],
-        queryFn: ({pageParam = 1}) => getVideoComments(videoId, pageParam),
+        queryFn: ({pageParam = 1}) => getVideoComments(videoId, pageParam, authenticated),
         getNextPageParam: (lastPage) => {
             if(lastPage.hasNextPage === false) return;
             return lastPage.nextPage;
