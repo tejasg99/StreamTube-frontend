@@ -30,6 +30,8 @@ import Tweet from "./Tweet/Tweet.jsx";
 import TweetInput from "./Tweet/TweetInput.jsx";
 import AvatarInput from "./Profile/AvatarInput.jsx";
 import CoverImageInput from "./Profile/CoverImageInput.jsx";
+import PlaylistName from "./Playlist/PlaylistName.jsx";
+import PlayListForm from "./Playlist/PlaylistForm.jsx";
 
 export {
     Header,
@@ -65,4 +67,6 @@ export {
     TweetInput,
     AvatarInput,
     CoverImageInput,
+    PlaylistName,
+    PlayListForm,
 }
