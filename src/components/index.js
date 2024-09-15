@@ -32,6 +32,7 @@ import AvatarInput from "./Profile/AvatarInput.jsx";
 import CoverImageInput from "./Profile/CoverImageInput.jsx";
 import PlaylistName from "./Playlist/PlaylistName.jsx";
 import PlayListForm from "./Playlist/PlaylistForm.jsx";
+import PlaylistCard from "./Playlist/PlaylistCard.jsx";
 
 export {
     Header,
@@ -69,4 +70,5 @@ export {
     CoverImageInput,
     PlaylistName,
     PlayListForm,
+    PlaylistCard,
 }
