@@ -28,6 +28,8 @@ import CommentBox from "./VideoDetails/CommentBox.jsx";
 import UploadVideo from "./UploadVideo/UploadVideo.jsx";
 import Tweet from "./Tweet/Tweet.jsx";
 import TweetInput from "./Tweet/TweetInput.jsx";
+import AvatarInput from "./Profile/AvatarInput.jsx";
+import CoverImageInput from "./Profile/CoverImageInput.jsx";
 
 export {
     Header,
@@ -61,4 +63,6 @@ export {
     UploadVideo,
     Tweet,
     TweetInput,
+    AvatarInput,
+    CoverImageInput,
 }
