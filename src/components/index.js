@@ -33,6 +33,8 @@ import CoverImageInput from "./Profile/CoverImageInput.jsx";
 import PlaylistName from "./Playlist/PlaylistName.jsx";
 import PlayListForm from "./Playlist/PlaylistForm.jsx";
 import PlaylistCard from "./Playlist/PlaylistCard.jsx";
+import ExistingPlaylist from "./Playlist/ExistingPlaylist.jsx";
+import PlaylistDropdown from "./Playlist/PlaylistDropdown.jsx";
 
 export {
     Header,
@@ -71,4 +73,6 @@ export {
     PlaylistName,
     PlayListForm,
     PlaylistCard,
+    ExistingPlaylist,
+    PlaylistDropdown,
 }
