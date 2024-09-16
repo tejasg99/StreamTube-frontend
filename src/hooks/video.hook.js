@@ -5,7 +5,8 @@ import {
     getAllVideos,
     updateVideo,
     deleteVideo,
-    togglePublishStatus
+    togglePublishStatus,
+    getNextVideos,
 } from "../api/videoAPI";
 
 export const useAllVideos = (options = {}) => {
@@ -88,5 +89,13 @@ export const useDeleteVideo = () => {
             queryClient.invalidateQueries({ queryKey: ["channelVideos"]})
             queryClient.invalidateQueries({ queryKey: ["channelStats"]})
         },
+    });
+}
+
+export const useNextVideos = (videoId) => {
+    return useQuery({
+        queryKey: ["nextVideos", videoId],
+        queryFn: () => getNextVideos(videoId),
+        staleTime: 1000 * 60 * 3,
     });
 }

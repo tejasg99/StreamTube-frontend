@@ -103,3 +103,14 @@ export const getAllVideos = async (
         throw error?.response?.data?.error;
     }
 }
+
+export const getNextVideos = async (videoId) => {
+    try {
+        const { data } = await instance.get(`/videos/next/${videoId}`)
+        toast.success(data?.message);
+        return data?.data;
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}
