@@ -39,6 +39,14 @@ import NextVideoCard from "./NextVideos/NextVideoCard.jsx";
 import AllNextVideos from "./NextVideos/AllNextVideos.jsx";
 import UserNextVideos from "./NextVideos/UserNextVideos.jsx";
 import NextVideosColumn from "./NextVideos/NextVideosColumn.jsx";
+import MychannelSkeleton from "./Skeletons/MychannelSkeleton.jsx";
+import NextVideoCardSkeleton from "./Skeletons/NextVideoCardSkeleton.jsx";
+import PlaylistSkeleton from "./Skeletons/PlaylistSkeleton.jsx";
+import SubscriberSkeleton from "./Skeletons/SubscriberSkeleton.jsx";
+import VideoCardSkeleton from "./Skeletons/VideoCardSkeleton.jsx";
+import VideoDetailSkeleton from "./Skeletons/VideoDetailSkeleton.jsx";
+import VideoListCardSkeleton from "./Skeletons/VideoListCardSkeleton.jsx";
+import VideoStatsSkeleton from "./Skeletons/VideoStatsSkeleton.jsx";
 
 export {
     Header,
@@ -83,4 +91,12 @@ export {
     AllNextVideos,
     UserNextVideos,
     NextVideosColumn,
+    MychannelSkeleton,
+    NextVideoCardSkeleton,
+    PlaylistSkeleton,
+    SubscriberSkeleton,
+    VideoCardSkeleton,
+    VideoDetailSkeleton,
+    VideoListCardSkeleton,
+    VideoStatsSkeleton,
 }
