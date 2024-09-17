@@ -35,6 +35,10 @@ import PlayListForm from "./Playlist/PlaylistForm.jsx";
 import PlaylistCard from "./Playlist/PlaylistCard.jsx";
 import ExistingPlaylist from "./Playlist/ExistingPlaylist.jsx";
 import PlaylistDropdown from "./Playlist/PlaylistDropdown.jsx";
+import NextVideoCard from "./NextVideos/NextVideoCard.jsx";
+import AllNextVideos from "./NextVideos/AllNextVideos.jsx";
+import UserNextVideos from "./NextVideos/UserNextVideos.jsx";
+import NextVideosColumn from "./NextVideos/NextVideosColumn.jsx";
 
 export {
     Header,
@@ -75,4 +79,8 @@ export {
     PlaylistCard,
     ExistingPlaylist,
     PlaylistDropdown,
+    NextVideoCard,
+    AllNextVideos,
+    UserNextVideos,
+    NextVideosColumn,
 }
