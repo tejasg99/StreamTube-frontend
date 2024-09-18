@@ -4,6 +4,8 @@ import { Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useCurrentUser } from "./hooks/auth.hook";
 import { setUser } from "./features/authSlice";
+import HeaderSkeleton from "./components/Skeletons/HeaderSkeleton";
+import SidebarSkeleton from "./components/Skeletons/SidebarSkeleton";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,7 +24,14 @@ function App() {
   
   if(isLoading || isFetching) {
     // Loading skeleton to be added here
-    console.log("Loading")
+    return (
+      <div className="h-screen overflow-y-auto bg-[#0e0e0e] text-white">
+        <HeaderSkeleton />
+        <div className="flex min-h-[calc(100vh-66px)] sm:min-h-[calc(100vh-82px)]">
+          <SidebarSkeleton />
+        </div>
+      </div>
+    );
   }
 
   if(error) {
