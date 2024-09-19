@@ -27,3 +27,13 @@ export const getChannelVideos = async (channelId) => {
         throw error?.response?.data?.error;
     }
 }
+
+export const getChannelInfo = async () => {
+    try {
+        const { data } = await instance.get(`/dashboard/about`);
+        return data?.data; 
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}

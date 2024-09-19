@@ -1,9 +1,10 @@
-import { useQuery, useMutation, useInfiniteQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useInfiniteQuery, useQueryClient } from "@tanstack/react-query";
 import {
     getUserTweets,
     createTweet,
     updateTweet, 
-    deleteTweet
+    deleteTweet,
+    getAllTweets,
 } from "../api/tweetAPI"
 
 export const useCreateTweet = () => {
@@ -54,5 +55,20 @@ export const useGetUserTweets = (userId) => {
         staleTime: 1000*60*5,
         retry: 2,
         enabled: !!userId, 
+    })
+}
+
+export const useGetAllTweets = (authenticated) => {
+    return useInfiniteQuery({
+        queryKey: ["tweets"],
+        queryFn: ({pageParam = 1}) => getAllTweets({pageParam, authenticated}),
+        getNextPageParam: (lastPage) => {
+            if(lastPage.hasNextPage) {
+                return lastPage.nextPage;
+            }
+            return undefined;
+        },
+        staleTime: 1000*60*5,
+        retry: 2, 
     })
 }

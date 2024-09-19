@@ -6,7 +6,8 @@ import {
     removeVideoFromPlaylist,
     getPlaylistById,
     getUserPlaylists,
-    deletePlaylist
+    deletePlaylist,
+    checkVideoInPlaylist,
 } from "../api/playlistAPI";
 
 export const useCreatePlaylist = () => {
@@ -72,5 +73,13 @@ export const useDeletePlaylist = () => {
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["playlists"]})
         }
+    })
+}
+
+export const useCheckVideoInPlaylist = (videoId, playlistId) => {
+    return useQuery({
+        queryKey: ["check-video", videoId, playlistId],
+        queryFn: () => checkVideoInPlaylist(videoId, playlistId),
+        staleTime: 1000*60*4,
     })
 }

@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import {
     getChannelStats,
-    getChannelVideos
+    getChannelVideos,
+    getChannelInfo,
 } from "../api/dashboardAPI";
 
 export const useGetChannelStats = (channelId) => {
@@ -15,5 +16,12 @@ export const useGetchannelVideos = (channelId) => {
     return useQuery({
         queryKey: ["channelVideos", channelId],
         queryFn: () => getChannelVideos(channelId)
+    })
+}
+
+export const useGetChannelInfor = () => {
+    return useQuery({
+        queryKey: ["channelInfo"],
+        queryFn: () => getChannelInfo(),
     })
 }

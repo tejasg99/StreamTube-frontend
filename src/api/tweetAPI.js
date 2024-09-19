@@ -52,4 +52,14 @@ export const getUserTweets = async (userId) => {
     }
 }
 
+export const getAllTweets = async ({pageParam = 1, authenticated = 1}) => {
+    try {
+        const { data} = await instance.get(`/tweets${authenticated ? "":"?guest=true"}`, {params: {page: pageParam, limit: 10}});
+        return data?.data;
+    } catch (error) {
+        toast.error(error?.response?.data?.error || "Failed to fetch all tweets");
+        throw error?.response?.data?.error;
+    }
+}
+
 

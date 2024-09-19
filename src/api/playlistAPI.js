@@ -83,3 +83,12 @@ export const deletePlaylist = async (playlistId) => {
         throw error?.response?.data?.error;
     }
 }
+
+export const checkVideoInPlaylist = async (playlistId, videoId) => {
+    try {
+        const { data } = await instance.get(`/playlist/check-video/${playlistId}/${videoId}`);
+        return data?.data?.isPresent;
+   } catch (error) {
+        throw error?.response?.data?.error;     
+   }
+}

@@ -4,7 +4,8 @@ import {
     getWatchHistory,
     updateAccountDetails,
     updateAvatar,
-    updateCoverImage
+    updateCoverImage,
+    clearWatchHistory,
 } from "../api/userAPI";
 
 export const useGetWatchHistory = () => {
@@ -50,6 +51,16 @@ export const useUpdateCoverImage = () => {
         mutationFn: (coverImageData) => updateCoverImage(coverImageData),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["channelInfo"]});
+        }
+    })
+}
+
+export const useClearWatchHistory = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: () => clearWatchHistory(),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["watchHistory"] });
         }
     })
 }

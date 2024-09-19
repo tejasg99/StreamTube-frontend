@@ -73,5 +73,16 @@ export const updateCoverImage = async (coverImageData) => {
     }
 }
 
+export const clearWatchHistory = async () => {
+    try {
+        const { data } = await instance.delete("/users/clear-history");
+        toast.success(data?.message);
+        return data;
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}
+
 
 
