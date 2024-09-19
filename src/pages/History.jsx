@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useGetWatchHistory } from "../hooks/user.hook";
+import { useGetWatchHistory, useClearWatchHistory } from "../hooks/user.hook";
 import { VideoListCard, VideoListCardSkeleton } from "../components/index";
 import { Link } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
@@ -7,10 +7,15 @@ import { BiSearch } from "react-icons/bi";
 function History() {
   const [searchTerm, setSearchTerm] = useState("");
   const { data: watchHistory, isLoading } = useGetWatchHistory();
+  const { mutateAsync: clearUserWatchHistory } = useClearWatchHistory();
 
   const filteredHistory = watchHistory?.filter((video) =>
     video.video.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const clearWatchHistory = async () => {
+    await clearUserWatchHistory();
+  };
 
   if (isLoading) {
     return (
@@ -51,6 +56,13 @@ function History() {
           />
           <BiSearch className="absolute h-6 w-6 left-3 top-2.5 text-blue-400" />
         </div>
+
+        <button
+          onClick={clearWatchHistory}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+        >
+          Clear Watch History
+        </button>
       </aside>
     </div>
   );

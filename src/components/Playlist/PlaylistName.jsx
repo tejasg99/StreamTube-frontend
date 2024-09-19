@@ -2,10 +2,12 @@ import { useState } from "react";
 import {
   useAddVideoToPlaylist,
   useRemoveVideoFromPlaylist,
+  useCheckVideoInPlaylist
 } from "../../hooks/playlist.hook";
 
 function PlaylistName({ playlistId, videoId, playlistName }) {
-  const [added, setAdded] = useState(false);
+  const {data: isAdded} = useCheckVideoInPlaylist(videoId, playlistId);
+  const [added, setAdded] = useState(isAdded || false);
   const { mutateAsync: addVideoToPlaylist } = useAddVideoToPlaylist();
   const { mutateAsync: removeVideoFromPlaylist } = useRemoveVideoFromPlaylist();
 

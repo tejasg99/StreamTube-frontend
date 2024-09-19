@@ -53,7 +53,7 @@ export const refreshAccessToken = async () => {
   }
 }
 
-export const register = async () => {
+export const register = async (data) => {
     // new form object
     const formData = new formData();
 
