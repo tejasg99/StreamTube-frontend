@@ -6,6 +6,7 @@ import {
     updateAvatar,
     updateCoverImage,
     clearWatchHistory,
+    updateChannelDesc,
 } from "../api/userAPI";
 
 export const useGetWatchHistory = () => {
@@ -16,7 +17,7 @@ export const useGetWatchHistory = () => {
     });
 }
 
-export const useGetUserChannelProfile = (username) => {
+export const useGetUserChannelInformation = (username) => {
     return useQuery({
         queryKey: ["channelInfo", username],
         queryFn: () => getUserChannelProfile(username),
@@ -33,6 +34,17 @@ export const useUpdateAccountDetails = () => {
             queryClient.invalidateQueries({ queryKey: ["currentUser"]});
         },
     });
+}
+
+export const useUpdateChannelDesc = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (updateDesc) => updateChannelDesc(updateDesc),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["channelInfo"]});
+            queryClient.invalidateQueries({ queryKey: ["currentUser"]});
+        }
+    })
 }
 
 export const useUpdateAvatar = () => {

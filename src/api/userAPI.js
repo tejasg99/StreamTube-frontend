@@ -39,6 +39,17 @@ export const updateAccountDetails = async (updateData) => {
     }
 }
 
+export const updateChannelDesc = async (updateDesc) => {
+    try {
+        const { data } = await instance.patch("/users/update-channel-desc", updateDesc);
+        toast.success(data?.message);
+        return data?.data;
+    } catch (error) {
+        toast.error(error?.response?.data?.error);
+        throw error?.response?.data?.error;
+    }
+}
+
 export const updateAvatar = async (avatarData) => {
     const formData = new formData();
 
