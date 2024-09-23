@@ -19,7 +19,7 @@ export const useGetchannelVideos = (channelId) => {
     })
 }
 
-export const useGetChannelInfor = () => {
+export const useGetChannelInfo = () => {
     return useQuery({
         queryKey: ["channelInfo"],
         queryFn: () => getChannelInfo(),
