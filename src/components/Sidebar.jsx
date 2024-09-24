@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IconContext } from "react-icons";
 // import Footer from "./Footer/Footer";
@@ -44,8 +43,8 @@ function Sidebar() {
       onMobile: false,
     },
     {
-      name: "Dashboard",
-      path: "/dashboard",
+      name: "My Dashboard",
+      path: "/my-dashboard",
       icon: <BsCollectionPlay />,
       onMobile: true,
     },
@@ -117,7 +116,7 @@ function Sidebar() {
           </li>
           <li className="hidden sm:block">
             <Link
-              to="/edit-profile/personal-info"
+              to="/edit-profile/account-details"
               className="flex flex-col items-center justify-center py-1 sm:w-full sm:flex-row sm:p-1.5 sm:rounded-md sm:hover:bg-[#444] sm:hover:text-white sm:focus:bg-[#444] sm:focus:text-white sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"
             >
               <span className="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4">

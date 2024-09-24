@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useToggleLike } from "../../hooks/like.hook";
-import LoginPopup from "../index";
+import LoginPopup from "../LoginPopup";
 import { IconContext } from "react-icons";
 import { FaRegThumbsUp, FaThumbsUp } from "react-icons/fa";
 

@@ -96,7 +96,7 @@ function Header() {
               <IoIosCloseCircleOutline className="w-9 h-9" />
             </button>
           </div>
-          <IconContext.Provider value={{ className = "w-6 h-6"}}>
+          <IconContext.Provider value={{ className : "w-6 h-6"}}>
             <ul className="my-4 flex w-full flex-wrap gap-2 px-4 sm:hidden">
               {mobileSidebarItems.map((item, index) => (
                 <li

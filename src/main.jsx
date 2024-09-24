@@ -85,7 +85,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/history",
+        path: "/watch-history",
         element: (
           <AuthLayout auth={true} pageName={"History"}>
             <Suspense fallback={<p>Loading...</p>}>
@@ -115,7 +115,7 @@ const router = createBrowserRouter([
             ),
           },
           {
-            path: "tweets",
+            path: "/tweets",
             element: (
               <AuthLayout auth>
                 <Suspense fallback={<p>Loading...</p>}>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useCreateTweet } from "../../hooks/tweet.hook";
 import { useSelector } from 'react-redux';
-import LoginPopup from "../index";
+import LoginPopup from "../LoginPopup";
 
 function TweetInput() {
     const authStatus = useSelector((state) => state.auth.authStatus);
