@@ -58,7 +58,7 @@ const router = createBrowserRouter([
         path: "/",
         element: (
           <AuthLayout auth={false}>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<p className="text-white text-3xl text-center">Loading...</p>}>
               <Home />
             </Suspense>
           </AuthLayout>
@@ -115,7 +115,7 @@ const router = createBrowserRouter([
             ),
           },
           {
-            path: "/tweets",
+            path: "tweets",
             element: (
               <AuthLayout auth>
                 <Suspense fallback={<p>Loading...</p>}>
@@ -239,7 +239,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/tweets",
+        path: "/tweets/",
         element: (
           <AuthLayout auth={false}>
             <Suspense fallback={<p>Loading...</p>}>

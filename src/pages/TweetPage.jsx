@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useInView } from "react-intersection-observer";
 import { useSelector } from 'react-redux';
-import { TweetInput, SubscriberSkeleton, Tweet,} from "../components/index";
+import { TweetInput, SubscriberSkeleton, Tweet } from "../components/index";
 import { useGetAllTweets } from "../hooks/tweet.hook";
 
 function TweetPage() {

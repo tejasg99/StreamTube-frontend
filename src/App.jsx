@@ -6,6 +6,7 @@ import { useCurrentUser } from "./hooks/auth.hook";
 import { setUser } from "./features/authSlice";
 import HeaderSkeleton from "./components/Skeletons/HeaderSkeleton";
 import SidebarSkeleton from "./components/Skeletons/SidebarSkeleton";
+import ContentSkeleton from './components/Skeletons/ContentSkeleton';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ function App() {
         <HeaderSkeleton />
         <div className="flex min-h-[calc(100vh-66px)] sm:min-h-[calc(100vh-82px)]">
           <SidebarSkeleton />
+          <ContentSkeleton />
         </div>
       </div>
     );
