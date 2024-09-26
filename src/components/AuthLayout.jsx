@@ -54,7 +54,7 @@ function AuthLayout({ auth, children, pageName }) {
                     <button className='bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-400 transition duration-300 text-lg font-semibold'
                     onClick={() => setShowLoginPopup(true)}
                     >
-                        Sign in
+                        Log in
                     </button>
                 </div>
             </div>

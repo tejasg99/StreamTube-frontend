@@ -251,16 +251,6 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/signup",
-    element: (
-      <AuthLayout auth={false}>
-        <Suspense fallback={<p>Loading...</p>}>
-          <Signup />
-        </Suspense>
-      </AuthLayout>
-    ),
-  },
-  {
     path: "/login",
     element: (
       <AuthLayout auth={false}>
@@ -270,6 +260,17 @@ const router = createBrowserRouter([
       </AuthLayout>
     ),
   },
+  {
+    path: "/signup",
+    element: (
+      <AuthLayout auth={false}>
+        <Suspense fallback={<p>Loading...</p>}>
+          <Signup />
+        </Suspense>
+      </AuthLayout>
+    ),
+  },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

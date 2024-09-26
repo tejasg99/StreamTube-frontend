@@ -4,7 +4,7 @@ import {
     logout,
     register,
     changePassword,
-    currentUser
+    currentUser,
 } from "../api/authAPI";
 
 export const useLogin = () => {
@@ -39,7 +39,7 @@ export const useChangePassword = () => {
 export const useCurrentUser = () => {
     return useQuery({
         queryKey: ["currentUser"],
-        queryFn: currentUser(),
+        queryFn: () => currentUser(),
         staleTime: 1000*60*5,
         retry: 1,
     })

@@ -25,7 +25,7 @@ GuestComponent.propTypes = {
 export const GuestChannel = () => (
   <GuestComponent
     title="Save and share your favorite videos"
-    description="Create your channel by signing in"
+    description="Login to create your channel"
     icon={FaUser}
   />
 );
@@ -33,7 +33,7 @@ export const GuestChannel = () => (
 export const GuestDashboard = () => (
   <GuestComponent
     title="Acess dashboard and get insights"
-    description="Sign in to know your stats, insights and more"
+    description="Login to know your stats, insights and more"
     icon={FaFilm}
   />
 );
@@ -41,7 +41,7 @@ export const GuestDashboard = () => (
 export const GuestSubscriptions = () => (
   <GuestComponent
     title="Never miss a video"
-    description="Subscribe to your favorite channels by signing in."
+    description="Login to subscribe to your favourite channels."
     icon={FaUsers}
   />
 );
@@ -49,7 +49,7 @@ export const GuestSubscriptions = () => (
 export const GuestLikedVideos = () => (
   <GuestComponent
     title="Like your favorite videos"
-    description="Sign in to like the video you love"
+    description="Login to like the video you love"
     icon={FaHeart}
   />
 );
@@ -57,7 +57,7 @@ export const GuestLikedVideos = () => (
 export const GuestHistory = () => (
   <GuestComponent
     title="Keep track of what you watch"
-    description="Sign in to see your watch history."
+    description="Login to see your watch history."
     icon={FaHistory}
   />
 );
@@ -65,7 +65,7 @@ export const GuestHistory = () => (
 export const GuestSettings = () => (
   <GuestComponent
     title="Customize your experience"
-    description="Sign in to access and modify your account settings."
+    description="Login to access and modify your account settings."
     icon={FaCog}
   />
 );
