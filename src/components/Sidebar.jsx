@@ -44,7 +44,7 @@ function Sidebar() {
     },
     {
       name: "My Dashboard",
-      path: "/my-dashboard",
+      path: "/myDashboard",
       icon: <BsCollectionPlay />,
       onMobile: true,
     },
@@ -127,7 +127,7 @@ function Sidebar() {
                   fullSize ? "lg:inline" : ""
                 }`}
               >
-                Settings
+                Account Settings
               </span>
             </Link>
           </li>

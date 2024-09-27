@@ -1,5 +1,6 @@
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {Logo, LoginForm} from "../components/index";
+import { Logo, LoginForm} from "../components/index.js";
 import { useDispatch } from 'react-redux';
 import { setUser } from '../features/authSlice';
 

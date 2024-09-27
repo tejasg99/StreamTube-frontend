@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useLogin, useRegister } from "../hooks/auth.hook";
 import { setUser } from "../features/authSlice";
-import { Logo, Input, SpecialButton } from "../components/index";
+import { Logo, Input, SpecialButton } from "../components/index.js";
 
 function Signup() {
   const dispatch = useDispatch();

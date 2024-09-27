@@ -13,8 +13,8 @@ import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 if (import.meta.env.MODE === "development") disableReactDevTools();
 
 const App = lazy(() => import("./App.jsx"));
-const Signup = lazy(() => import("./pages/Signup.jsx"));
 const Home = lazy(() => import("./pages/Home.jsx"));
+const Signup = lazy(() => import("./pages/Signup.jsx"));
 const Login = lazy(() => import("./pages/Login.jsx"));
 const VideoDetail = lazy(() => import("./pages/VideoDetail.jsx"));
 const LikedVideos = lazy(() => import("./pages/LikedVideos.jsx"));
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
         <App />
       </Suspense>
     ),
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
         path: "/",
         element: (
           <AuthLayout auth={false}>
-            <Suspense fallback={<p className="text-white text-3xl text-center">Loading...</p>}>
+            <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
               <Home />
             </Suspense>
           </AuthLayout>
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
         path: "/videos/:videoId",
         element: (
           <AuthLayout auth={false}>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
               <VideoDetail />
             </Suspense>
           </AuthLayout>
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
         path: "/liked-videos",
         element: (
           <AuthLayout auth={true} pageName={"LikedVideos"}>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
               <LikedVideos />
             </Suspense>
           </AuthLayout>
@@ -88,7 +88,7 @@ const router = createBrowserRouter([
         path: "/watch-history",
         element: (
           <AuthLayout auth={true} pageName={"History"}>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
               <History />
             </Suspense>
           </AuthLayout>
@@ -98,7 +98,7 @@ const router = createBrowserRouter([
         path: "/channel/:username",
         element: (
           <AuthLayout auth pageName={"MyChannel"}>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
               <MyChannel />
             </Suspense>
           </AuthLayout>
@@ -108,7 +108,7 @@ const router = createBrowserRouter([
             path: "videos",
             element: (
               <AuthLayout auth>
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
                   <ChannelVideos />
                 </Suspense>
               </AuthLayout>
@@ -118,7 +118,7 @@ const router = createBrowserRouter([
             path: "tweets",
             element: (
               <AuthLayout auth>
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
                   <ChannelTweets />
                 </Suspense>
               </AuthLayout>
@@ -128,7 +128,7 @@ const router = createBrowserRouter([
             path: "playlist",
             element: (
               <AuthLayout auth>
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
                   <ChannelPlaylist />
                 </Suspense>
               </AuthLayout>
@@ -138,7 +138,7 @@ const router = createBrowserRouter([
             path: "subscribers",
             element: (
               <AuthLayout auth>
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
                   <ChannelSubscribers />
                 </Suspense>
               </AuthLayout>
@@ -148,7 +148,7 @@ const router = createBrowserRouter([
             path: "about",
             element: (
               <AuthLayout auth>
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
                   <ChannelAbout />
                 </Suspense>
               </AuthLayout>
@@ -157,10 +157,10 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/my-dashboard",
+        path: "/myDashboard",
         element: (
           <AuthLayout auth pageName={"MyStudio"}>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
               <MyDashboard />
             </Suspense>
           </AuthLayout>
@@ -170,7 +170,7 @@ const router = createBrowserRouter([
         path: "/subscriptions",
         element: (
           <AuthLayout auth pageName={"Subscriptions"}>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
               <Subscriptions />
             </Suspense>
           </AuthLayout>
@@ -180,7 +180,7 @@ const router = createBrowserRouter([
         path: "/edit-profile",
         element: (
           <AuthLayout auth pageName={"Settings"}>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
               <EditProfile />
             </Suspense>
           </AuthLayout>
@@ -190,7 +190,7 @@ const router = createBrowserRouter([
             path: "change-password",
             element: (
               <AuthLayout auth>
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
                   <EditChangePassword />
                 </Suspense>
               </AuthLayout>
@@ -200,7 +200,7 @@ const router = createBrowserRouter([
             path: "account-details",
             element: (
               <AuthLayout auth>
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
                   <EditAccountDetails />
                 </Suspense>
               </AuthLayout>
@@ -212,7 +212,7 @@ const router = createBrowserRouter([
         path: "/playlist/:playlistId",
         element: (
           <AuthLayout auth>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
               <Playlist />
             </Suspense>
           </AuthLayout>
@@ -222,7 +222,7 @@ const router = createBrowserRouter([
         path: "/support",
         element: (
           <AuthLayout auth={false}>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
               <Support />
             </Suspense>
           </AuthLayout>
@@ -232,7 +232,7 @@ const router = createBrowserRouter([
         path: "/search/:query",
         element: (
           <AuthLayout auth={false}>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
               <SearchVideos />
             </Suspense>
           </AuthLayout>
@@ -242,7 +242,7 @@ const router = createBrowserRouter([
         path: "/tweets/",
         element: (
           <AuthLayout auth={false}>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
               <TweetPage />
             </Suspense>
           </AuthLayout>
@@ -254,7 +254,7 @@ const router = createBrowserRouter([
     path: "/login",
     element: (
       <AuthLayout auth={false}>
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
           <Login />
         </Suspense>
       </AuthLayout>
@@ -264,13 +264,12 @@ const router = createBrowserRouter([
     path: "/signup",
     element: (
       <AuthLayout auth={false}>
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">Loading...</p>}>
           <Signup />
         </Suspense>
       </AuthLayout>
     ),
   },
-
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
