@@ -37,7 +37,7 @@ const TweetPage = lazy(() => import("./pages/TweetPage.jsx"));
 
 import { AuthLayout } from "./components";
 import { Provider } from "react-redux";
-import store from "./store/store";
+import store from "./store/store.js";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
@@ -53,7 +53,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <AuthLayout auth={false}>
         <Suspense
           fallback={
             <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -63,7 +62,6 @@ const router = createBrowserRouter([
         >
           <App />
         </Suspense>
-      </AuthLayout>
     ),
     children: [
       {
@@ -413,23 +411,23 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
     <Provider store={store}>
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </Provider>
-    { import.meta.env.MODE === "development" && (
-      <ReactQueryDevtools initialIsOpen={false}/>
+    {import.meta.env.MODE === "development" && (
+      <ReactQueryDevtools initialIsOpen={false} />
     )}
-    <Toaster 
-    position="top-right"
-    reverseOrder={true}
-    toastOptions={{
-      error: {
-        style: { borderRadius: "50", color: "red" },
-      },
-      success: { 
-        style: { borderRadius: "50", color: "green" },
-      },
-      duration: 2000,
-    }}
+    <Toaster
+      position="top-right"
+      reverseOrder={true}
+      toastOptions={{
+        error: {
+          style: { borderRadius: "50", color: "red" },
+        },
+        success: {
+          style: { borderRadius: "50", color: "green" },
+        },
+        duration: 2000,
+      }}
     />
   </QueryClientProvider>
-)
+);
