@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Logo, LoginForm} from "../components/index.js";
 import { useDispatch } from 'react-redux';
@@ -15,17 +14,17 @@ function Login() {
 
   return (
     <div className='h-screen overflow-y-auto bg-[#131313] text-white flex justify-center items-center'>
-        <div className='mx-auto my-8 flex w-full max-w-sm flex-col px-4'>
+        <div className='mx-auto my-8 flex w-full max-w-sm flex-col p-4 border border-slate-500 rounded-lg'>
             <div className='w-full flex justify-center items-center'>
                 <Logo 
-                className={" w-full text-center text-2xl font-semibold uppercase"}
+                className={" w-full text-center text-2xl font-semibold"}
                 inline={true}
                 />
             </div>
             <div className='w-full flex flex-col items-center justify-center mb-6'>
                 <h1 className='text-2xl text-[#FFFFFF] text-extrabold'>LOGIN</h1>
                 <span className='text-[#FFFFFF] '>
-                    Do not have an account?
+                    Do not have an account? {" "}
                     <Link to="/signup" className='text-blue-500 inline'>
                         Signup
                     </Link>

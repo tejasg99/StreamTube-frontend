@@ -377,7 +377,6 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: (
-      <AuthLayout auth={false} pageName={"Signup"}>
         <Suspense
           fallback={
             <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -387,13 +386,11 @@ const router = createBrowserRouter([
         >
           <Signup />
         </Suspense>
-      </AuthLayout>
     ),
   },
   {
     path: "/login",
     element: (
-      <AuthLayout auth={false} pageName={"Login"}>
         <Suspense
           fallback={
             <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -403,7 +400,6 @@ const router = createBrowserRouter([
         >
           <Login />
         </Suspense>
-      </AuthLayout>
     ),
   },
 ]);

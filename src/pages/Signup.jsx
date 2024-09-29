@@ -1,4 +1,3 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -72,11 +71,11 @@ function Signup() {
 
   return (
     <div className="h-screen overflow-y-auto bg-[#0e0e0e] text-white flex justify-center items-center">
-      <div className="mx-auto my-8 flex w-full max-w-sm flex-col px-4">
+      <div className="mx-auto my-8 flex w-full max-w-sm flex-col p-4 border border-slate-500 rounded-lg">
         <div className="w-full flex justify-center items-center">
           <Logo
             inline={true}
-            className={"w-full text-center text-2xl font-semibold uppercase"}
+            className={"w-full text-center text-2xl font-semibold"}
           />
         </div>
 
@@ -144,7 +143,7 @@ function Signup() {
 
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-300">
-              Profile Picture*
+              Profile Picture/Avatar*
             </label>
             <input
               type="file"
