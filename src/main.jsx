@@ -115,7 +115,7 @@ const router = createBrowserRouter([
       {
         path: "/watch-history",
         element: (
-          <AuthLayout auth={true} pageName={"watchHistory"}>
+          <AuthLayout auth={true} pageName={"History"}>
             <Suspense
               fallback={
                 <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -293,7 +293,7 @@ const router = createBrowserRouter([
           {
             path: "edit-account-details",
             element: (
-              <AuthLayout auth={true} pageName={"EditAccountDetails"}>
+              <AuthLayout auth={true} pageName={'Settings'}>
                 <Suspense
                   fallback={
                     <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -327,7 +327,7 @@ const router = createBrowserRouter([
       {
         path: "/support",
         element: (
-          <AuthLayout auth={false} pageName={"Support"}>
+          
             <Suspense
               fallback={
                 <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -337,7 +337,7 @@ const router = createBrowserRouter([
             >
               <Support />
             </Suspense>
-          </AuthLayout>
+          
         ),
       },
       {

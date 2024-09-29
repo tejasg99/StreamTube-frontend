@@ -56,7 +56,7 @@ function Sidebar() {
     },
     {
       name: "Tweets",
-      path: "/tweets",
+      path: "/tweets-page",
       icon: <FaRegCommentDots />,
       onMobile: true,
     },
@@ -64,7 +64,7 @@ function Sidebar() {
 
   return (
     <aside
-      className={`z-40 group absolute inset-x-0 bottom-0 w-full shrink-0 bg-[#0e0e0e] px-2 py-2 sm:absolute sm:inset-y-0 sm:max-w-[70px] sm:py-6 sm:hover:max-w-[250px] ${
+      className={`z-40 group absolute border-r border-r-slate-500 inset-x-0 bottom-0 w-full shrink-0 bg-[#0e0e0e] px-2 py-2 sm:absolute sm:inset-y-0 sm:max-w-[70px] sm:py-6 sm:hover:max-w-[250px] ${
         fullSize ? "lg:sticky lg:max-w-[250px]" : ""
       }`}
     >
@@ -116,7 +116,7 @@ function Sidebar() {
           </li>
           <li className="hidden sm:block">
             <Link
-              to="/edit-profile/account-details"
+              to="/edit-profile/edit-account-details"
               className="flex flex-col items-center justify-center py-1 sm:w-full sm:flex-row sm:p-1.5 sm:rounded-md sm:hover:bg-[#444] sm:hover:text-white sm:focus:bg-[#444] sm:focus:text-white sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"
             >
               <span className="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4">
