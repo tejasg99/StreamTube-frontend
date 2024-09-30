@@ -34,6 +34,7 @@ const EditChangePassword = lazy(() =>
 const Playlist = lazy(() => import("./pages/Playlist.jsx"));
 const SearchVideos = lazy(() => import("./pages/SearchVideos.jsx"));
 const TweetPage = lazy(() => import("./pages/TweetPage.jsx"));
+const Healthcheck = lazy(() => import("./pages/Healthcheck.jsx"));
 
 import { AuthLayout } from "./components";
 import { Provider } from "react-redux";
@@ -402,6 +403,14 @@ const router = createBrowserRouter([
         </Suspense>
     ),
   },
+  {
+    path: "/healthcheck",
+    element: (
+      <Suspense fallback={<p className="bg-slate-900 text-white">Loading</p>}>
+        <Healthcheck />
+      </Suspense>
+    )
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

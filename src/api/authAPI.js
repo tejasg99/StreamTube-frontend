@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 // Axios instance
 const instance = axios.create({
     baseURL: API_URL,
-    withCredentials: true
+    withCredentials: true,
 })
 
 //Axios request, response interceptors
@@ -82,6 +82,7 @@ export const register = async (data) => {
 }
 
 export const login = async (formData) => {
+    console.log(formData);
     try {
         const { data } = await instance.post("/users/login", formData)
         localStorage.setItem('accessToken', data.data.accessToken)
