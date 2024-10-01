@@ -36,7 +36,7 @@ const SearchVideos = lazy(() => import("./pages/SearchVideos.jsx"));
 const TweetPage = lazy(() => import("./pages/TweetPage.jsx"));
 const Healthcheck = lazy(() => import("./pages/Healthcheck.jsx"));
 
-import { AuthLayout } from "./components";
+import { AuthLayout, UploadVideo } from "./components";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -373,6 +373,22 @@ const router = createBrowserRouter([
           </AuthLayout>
         ),
       },
+      {
+        path: "/upload-video",
+        element: (
+          <AuthLayout auth={true} pageName={"uploadVideo"}>
+            <Suspense
+              fallback={
+                <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
+                  Loading...
+                </p>
+              }
+            >
+              <UploadVideo />
+            </Suspense>
+          </AuthLayout>
+        )
+      }
     ],
   },
   {

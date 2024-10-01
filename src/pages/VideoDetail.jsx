@@ -69,8 +69,8 @@ function VideoDetail() {
               <div className="h-full w-full">
                 {video && (
                   <VideoPlayer
-                    src={video?.video?.url}
-                    thumbnail={video?.thumbnail?.url}
+                    src={video?.video}
+                    thumbnail={video?.thumbnail}
                     title={video?.title}
                     duration={video?.duration}
                   />

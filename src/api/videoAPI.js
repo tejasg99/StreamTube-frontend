@@ -69,14 +69,15 @@ export const deleteVideo = async (videoId) => {
     }
 }
 
-export const getVideoById = async (videoId) => {
+export const getVideoById = async (videoId, isAuthenticated = true) => {
     try {
-        const { data } = await instance.get(`/videos/${videoId}`)
+        const url = `/videos/${videoId}${isAuthenticated ? "": "?guest=true"}`;
+        const { data } = await instance.get(url)
         toast.success(data?.message)
         return data?.data
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.error || "Error while fetching video by Id");
+        throw error?.response?.data?.error || "Error: getVideoById";
     }
 }
 

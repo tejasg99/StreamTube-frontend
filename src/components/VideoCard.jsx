@@ -8,7 +8,7 @@ function VideoCard({ video }) {
             <div className="relative mb-2 w-full pt-[56%]">
                 <div className="absolute inset-0">
                     <img 
-                    src={video?.thumbnail?.url} 
+                    src={video?.thumbnail} 
                     alt={video?.title} 
                     className="h-full w-full rounded-xl"
                     />
@@ -20,7 +20,7 @@ function VideoCard({ video }) {
             <div className="flex gap-x-2">
                 <div className="h-10 w-10 shrink-0">
                     <img 
-                    src={video?.ownerDetails?.avatar?.url} 
+                    src={video?.ownerDetails?.avatar} 
                     alt={video?.ownerDetails?.username}
                     className="h-full w-full rounded-full object-cover" 
                     />
@@ -40,7 +40,7 @@ function VideoCard({ video }) {
 }
 
 VideoCard.propTypes = {
-    video: PropTypes.string,
+    video: PropTypes.object,
 }
 
 export default VideoCard;

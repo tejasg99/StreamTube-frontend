@@ -53,7 +53,7 @@ function MyChannel() {
             <div
             className='absolute inset-0 overflow-hidden'
             style={{
-                backgroundImage: `url${channelInfo?.coverImage?.url || defaultCoverImage}`,
+                backgroundImage: `url${channelInfo?.coverImage || defaultCoverImage}`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -64,7 +64,7 @@ function MyChannel() {
             <div className='flex flex-wrap gap-4 pb-4 pt-6'>
                 <span className='relative -mt-12 inline-block h-28 w-28 shrink-0 overflow-hidden rounded-full border-2'>
                     <img 
-                    src={channelInfo?.avatar?.url} 
+                    src={channelInfo?.avatar} 
                     alt="channelAvatar"
                     className='h-full w-full object-cover' 
                     />
@@ -101,7 +101,7 @@ function MyChannel() {
                     </div>
                 </div>
             </div>
-            <ul className='no-scrollbar sticky top-[66px] z-[2]  flex flex-row justify-between text-wrap overflow-auto border-b-2 border-gray-400 bg-[#0e0e0e] py-2 sm:top-[82px]'>
+            <ul className='no-scrollbar sticky top-[66px] z-[2]  flex flex-row justify-between text-wrap overflow-auto border-b-2 border-gray-400 bg-[#0e0e0e] py-2 sm:top-[82px] mb-4'>
                 {channelItems.map((item, index) => (
                     <li key={index} className='w-full'> 
                         <NavLink

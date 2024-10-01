@@ -10,7 +10,7 @@ function History() {
   const { mutateAsync: clearUserWatchHistory } = useClearWatchHistory();
 
   const filteredHistory = watchHistory?.filter((video) =>
-    video.video.title.toLowerCase().includes(searchTerm.toLowerCase())
+    video.video?.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const clearWatchHistory = async () => {
@@ -38,8 +38,8 @@ function History() {
         <div className="flex flex-col gap-4 p-4">
           {filteredHistory &&
             filteredHistory.map((video) => (
-              <Link to={`/videos/${video?.video?._id}`} key={video?.video?._id}>
-                <VideoListCard video={video.video} />
+              <Link to={`/videos/${video.video?._id}`} key={video.video?._id}>
+                <VideoListCard video={video?.video} />
               </Link>
             ))}
         </div>
