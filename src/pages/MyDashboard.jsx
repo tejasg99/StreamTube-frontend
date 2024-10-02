@@ -13,6 +13,7 @@ import { IconContext } from "react-icons";
 
 function MyDashboard() {
     const dispatch = useDispatch();
+    const channelId = useSelector((state) => state.auth.user?._id);
     const channelInformation = useSelector((state) => state.auth.user);
     const showEdit = useSelector((state) => state.ui.showEditVideo);
     const showUpload = useSelector((state) => state.ui.showUploadVideo);
@@ -26,7 +27,7 @@ function MyDashboard() {
       }
     }, [dispatch]);
 
-    const { data: channelStats,} = useGetChannelStats();
+    const { data: channelStats,} = useGetChannelStats(channelId);
 
     const channelStatsItems = [
         {

@@ -4,14 +4,15 @@ import { useDeleteVideo, useTogglePublishStatus } from "../hooks/video.hook";
 import { MdModeEditOutline, MdDelete, MdSearch } from "react-icons/md";
 import { setShowEditVideo } from "../features/uiSlice";
 import { setVideoForEditing } from "../features/videoSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import DeletePopup from "./DeletePopup";
 
 function VideoStats() {
   const dispatch = useDispatch();
+  const channelId = useSelector((state) => state.auth.user?._id)
   const [deletePopupId, setDeletePopupId] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const { data: channelVideos, isFetching } = useGetchannelVideos();
+  const { data } = useGetchannelVideos(channelId);
   const { mutateAsync: toggleVideoPublishStatus } = useTogglePublishStatus();
   const { mutateAsync: deleteVideo, isPending: isDeleting } = useDeleteVideo();
 
@@ -34,10 +35,10 @@ function VideoStats() {
   };
 
   const filteredVideos = useMemo(() => {
-    return channelVideos?.filter((video) =>
+    return data?.docs.filter((video) =>
       video.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  }, [channelVideos, searchTerm]);
+  }, [data, searchTerm]);
 
   return (
     <>

@@ -39,7 +39,7 @@ function EditProfile() {
                 <div className='inline-block'>
                     <div className='inline-flex min-w-[145px] justify-end'>
                         <Link 
-                        to={`/c/${userChannel?.username}`}
+                        to={`/channel/${userChannel?.username}`}
                         className='px-4 py-1.5 text-sm text-white bg-blue-800 rounded-md'
                         >
                             View Channel

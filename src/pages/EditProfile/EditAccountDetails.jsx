@@ -78,7 +78,7 @@ function EditAccountDetails() {
               </label>
               <input
                 type="text"
-                className="w-full rounded-lg bg-gray-700 py-1.5 pl-10 pr-2"
+                className="w-full rounded-lg bg-gray-700 px-2 py-1.5"
                 id="email"
                 placeholder="Enter email address"
                 {...register("email")}

@@ -31,7 +31,7 @@ function Header() {
   };
 
   const handleUploadVideo = () => {
-    navigate("/upload-video");
+    navigate("/myDashboard");
     dispatch(setShowUploadVideo(true));
   };
 

@@ -41,7 +41,7 @@ function App() {
   }
 
   return (
-    <div className="h-screen overflow-y-auto bg-[#0e0e0e] text-white">
+    <div className="h-screen overflow-y-auto bg-[#0e0e0e] text-white scrollbar-hide">
       <Header />
       <div className="flex min-h-[calc(100vh-66px)] sm:min-h-[calc(100vh-82px)]">
         <Sidebar />
