@@ -69,7 +69,7 @@ function VideoDetail() {
               <div className="h-full w-full">
                 {video && (
                   <VideoPlayer
-                    src={video?.video}
+                    src={video?.videoFile}
                     thumbnail={video?.thumbnail}
                     title={video?.title}
                     duration={video?.duration}
@@ -110,7 +110,7 @@ function VideoDetail() {
                 <div className="flex items-center gap-x-4">
                   <div className="mt-2 h-12 w-12 shrink-0">
                     <img
-                      src={video && video?.owner?.avatar?.url}
+                      src={video && video?.owner?.avatar}
                       alt={video && video?.owner?.username}
                       className="h-full w-full rounded-full object-cover"
                     />

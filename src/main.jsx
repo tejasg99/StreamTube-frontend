@@ -36,7 +36,7 @@ const SearchVideos = lazy(() => import("./pages/SearchVideos.jsx"));
 const TweetPage = lazy(() => import("./pages/TweetPage.jsx"));
 const Healthcheck = lazy(() => import("./pages/Healthcheck.jsx"));
 
-import { AuthLayout, UploadVideo } from "./components";
+import { AuthLayout } from "./components";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: (
-          <AuthLayout auth={false}>
+          
             <Suspense
               fallback={
                 <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -78,13 +78,13 @@ const router = createBrowserRouter([
             >
               <Home />
             </Suspense>
-          </AuthLayout>
+          
         ),
       },
       {
         path: "/videos/:videoId",
         element: (
-          <AuthLayout auth={false}>
+          
             <Suspense
               fallback={
                 <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
             >
               <VideoDetail />
             </Suspense>
-          </AuthLayout>
+          
         ),
       },
       {
@@ -360,7 +360,7 @@ const router = createBrowserRouter([
       {
         path: "/tweets-page",
         element: (
-          <AuthLayout auth={false} pageName={"TweetPage"}>
+          
             <Suspense
               fallback={
                 <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -370,7 +370,7 @@ const router = createBrowserRouter([
             >
               <TweetPage />
             </Suspense>
-          </AuthLayout>
+          
         ),
       },
       // {

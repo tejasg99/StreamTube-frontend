@@ -49,7 +49,7 @@ function Comment({ comment }) {
           <Link to={`/channel/${comment && comment?.owner?.username}`}>
             <div className="mt-2 h-11 w-11 shrink-0">
               <img
-                src={comment && comment?.owner?.avatar?.url}
+                src={comment && comment?.owner?.avatar}
                 alt={comment && comment?.owner?.username}
                 className="h-full w-full rounded-full object-cover"
               />
@@ -125,9 +125,7 @@ Comment.propTypes = {
             _id: PropTypes.string.isRequired,
             fullname: PropTypes.string.isRequired,
             username: PropTypes.string.isRequired,
-            avatar: PropTypes.shape({
-                url: PropTypes.string,
-            }),
+            avatar: PropTypes.string,
         }).isRequired,
         isLiked: PropTypes.bool,
         likesCount: PropTypes.number,

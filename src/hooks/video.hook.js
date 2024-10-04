@@ -13,7 +13,7 @@ export const useAllVideos = (options = {}) => {
     const {userId, sortBy, sortType, query} = options;
     return useInfiniteQuery({
         queryKey: ["videos", {userId, sortBy, sortType, query}],
-        queryFn: async ({pageParam = 1}) => {
+        queryFn: async ({ pageParam = 1 }) => {
             const response = await getAllVideos(
                 pageParam,
                 userId,

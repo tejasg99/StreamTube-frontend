@@ -17,7 +17,7 @@ function VideoCard({ video }) {
                    {video && formatDuration(video?.duration)} 
                 </span>
             </div>
-            <div className="flex gap-x-2">
+            <div className="flex gap-2">
                 <div className="h-10 w-10 shrink-0">
                     <img 
                     src={video?.ownerDetails?.avatar} 
@@ -27,12 +27,13 @@ function VideoCard({ video }) {
                 </div>
                 <div className="w-full">
                     <h6 className="mb-1 font-semibold">{video?.title}</h6>
+                    <p className="text-sm text-gray-200">
+                        {video?.ownerDetails?.username}
+                    </p>                   
                     <span className="flex text-sm text-gray-200">
                         {video?.views} views · {timeAgo(video?.createdAt)}
                     </span>
-                    <p className="text-sm text-gray-200">
-                        {video?.ownerDetails?.username}
-                    </p>
+
                 </div>
             </div>
         </div>
