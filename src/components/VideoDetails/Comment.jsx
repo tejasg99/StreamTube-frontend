@@ -14,7 +14,7 @@ function Comment({ comment }) {
 
   //Check if the user is the owner of the comment
   const userId = useSelector((state) => state.auth.user?._id);
-  const isOwner = comment?.owner?._id === userId ? true : false;
+  const isOwner = comment?.ownerDetails?._id === userId ? true : false;
 
   const { mutateAsync: editComment } = useUpdateComment();
   const { mutateAsync: deleteComment } = useDeleteComment();
@@ -46,24 +46,24 @@ function Comment({ comment }) {
     <>
       <div className="flex justify-between gap-x-4">
         <div className="flex gap-x-4">
-          <Link to={`/channel/${comment && comment?.owner?.username}`}>
+          <Link to={`/channel/${comment && comment?.ownerDetails?.username}`}>
             <div className="mt-2 h-11 w-11 shrink-0">
               <img
-                src={comment && comment?.owner?.avatar}
-                alt={comment && comment?.owner?.username}
+                src={comment && comment?.ownerDetails?.avatar}
+                alt={comment && comment?.ownerDetails?.username}
                 className="h-full w-full rounded-full object-cover"
               />
             </div>
           </Link>
           <div className="block">
             <p className="flex items-center text-gray-200">
-              {comment && comment?.owner?.fullname}·{"  "}
+              {comment && comment?.ownerDetails?.fullname}·{"  "}
               <span className="text-sm">
                 {comment && timeAgo(comment?.createdAt)}
               </span>
             </p>
             <p className="text-sm text-gray-200">
-              @{comment && comment?.owner?.username}
+              @{comment && comment?.ownerDetails?.username}
             </p>
 
             {isEditing ? (
@@ -106,7 +106,8 @@ function Comment({ comment }) {
               iconSize={"w-4"}
               id={comment && comment?._id}
               type={"comments"}
-              isLiked={comment && comment?.likesCount}
+              isLiked={comment && comment?.isLiked}
+              likesCount={comment?.likesCount}
             />
           </div>
         </div>
@@ -121,12 +122,7 @@ Comment.propTypes = {
         _id: PropTypes.string.isRequired,
         content: PropTypes.string.isRequired,
         createdAt: PropTypes.string.isRequired,
-        owner: PropTypes.shape({
-            _id: PropTypes.string.isRequired,
-            fullname: PropTypes.string.isRequired,
-            username: PropTypes.string.isRequired,
-            avatar: PropTypes.string,
-        }).isRequired,
+        ownerDetails: PropTypes.object.isRequired,
         isLiked: PropTypes.bool,
         likesCount: PropTypes.number,
     }).isRequired,

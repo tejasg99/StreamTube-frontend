@@ -21,7 +21,7 @@ export const useGetVideoComments = (videoId, authenticated) => {
 export const useAddComment = () => {
     const queryClient = useQueryClient();
     return useMutation({
-        mutationFn: ({ videoId, commentData}) => addComment(videoId, {content: commentData}),
+        mutationFn: ({ videoId, comment}) => addComment(videoId, {content: comment}),
         onSuccess: (data, videoId) => {
             queryClient.invalidateQueries({ queryKey: ["comments", videoId]})
         }
@@ -31,7 +31,7 @@ export const useAddComment = () => {
 export const useUpdateComment = () => {
     const queryClient = useQueryClient();
     return useMutation({
-        mutationFn: ({commentId, commentData}) => updateComment(commentId, { content: commentData}),
+        mutationFn: ({commentId, comment}) => updateComment(commentId, { content: comment}),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["comments"]})
         }

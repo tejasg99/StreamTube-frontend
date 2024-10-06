@@ -19,7 +19,7 @@ function VideoDetail() {
   const dispatch = useDispatch();
   const { videoId } = useParams();
   const authStatus = useSelector((state) => state.auth.authStatus);
-  const userId = useSelector((state) => state.auth.user._id);
+  const userId = useSelector((state) => state.auth.user?._id);
 
   const {
     data: video,

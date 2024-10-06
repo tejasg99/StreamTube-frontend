@@ -12,7 +12,7 @@ export function timeAgo(createdAt){
     if(seconds < 60) {
         return `${Math.round(seconds)} seconds ago`;
     } else if(minutes < 60) {
-        return `${Math.rounds(minutes)} minutes ago`;
+        return `${Math.round(minutes)} minutes ago`;
     } else if(hours < 24) {
         return `${Math.round(hours)} hours ago`;
     } else if(days < 7) {

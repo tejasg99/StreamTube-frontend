@@ -22,6 +22,7 @@ export const getVideoComments = async (
         
         const { data } = await instance.get(url.href)
         toast.success(data?.message)
+        // console.log("getVideoComments response: ",data?.data)
         return data?.data;
     } catch (error) {
         toast.error(error?.response?.data?.error)
@@ -29,10 +30,10 @@ export const getVideoComments = async (
     }
 }
 
-export const addComment = async (videoId, commentData) => {
+export const addComment = async (videoId, comment) => {
     try {
-        const { data } = await instance.post(`/comments/${videoId}`, commentData)
-        toast.success(data?.message)
+        const { data } = await instance.post(`/comments/${videoId}`, comment)
+        toast.success(data?.message);
         return data?.data;
     } catch (error) {
         toast.error(error?.response?.data?.error)
@@ -40,9 +41,9 @@ export const addComment = async (videoId, commentData) => {
     }
 }
 
-export const updateComment = async (commentId, updateData) => {
+export const updateComment = async (commentId, comment) => {
     try {
-        const { data } = await instance.patch(`/comments/c/${commentId}`, updateData)
+        const { data } = await instance.patch(`/comments/c/${commentId}`, comment)
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
