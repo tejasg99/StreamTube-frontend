@@ -14,12 +14,13 @@ import { ProgressBar } from "../../components/index";
 function ChannelAbout() {
     const channel = useSelector((state) => state.channel.channel);
     const { data: channelAbout, isFetching } = useGetChannelInfo();
+    console.log("ChannelInfo response: ",channelAbout);
 
     const channelDetails = [
         {
             icon: FaEnvelope,
-            text: `${channelAbout.email}`,
-            link: `mailto:${channelAbout.email}`
+            text: `${channelAbout?.email}`,
+            link: `mailto:${channelAbout?.email}`
         },
         // {
         //     icon: FaGlobe,

@@ -34,6 +34,7 @@ export const getChannelVideos = async (channelId) => {
 export const getChannelInfo = async () => {
     try {
         const { data } = await instance.get(`/dashboard/about`);
+        // console.log("getChannelInfo response: ", data?.data)
         return data?.data; 
     } catch (error) {
         toast.error(error?.response?.data?.error);
