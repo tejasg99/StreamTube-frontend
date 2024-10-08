@@ -5,12 +5,16 @@ import { useAllVideos } from "../../hooks/video.hook";
 import { VideoCard, VideoCardSkeleton } from "../../components/index";
 
 function ChannelVideos() {
-    const channelId = useSelector((state) => state.channel.channel?._id);
+    // const channelId = useSelector((state) => state.channel.channel?._id);
+    const userId = useSelector((state) => state.auth.user?._id);
+    console.log("UserId: ", userId);
     const {
         data: channelVideos,
         isFetching,
         isFetched,
-    } = useAllVideos({ userId: channelId });
+    } = useAllVideos({ userId });
+
+    // console.log("ChannelVideos Response: ",channelVideos)
 
     if(isFetching) {
         return (

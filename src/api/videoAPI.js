@@ -98,7 +98,7 @@ export const getAllVideos = async (
         if(sortType) url.searchParams.set("sortType", sortType)
         if(query) url.searchParams.set("query", query)
         if(limit) url.searchParams.set("limit", limit)
-        const response = await instance.get(url.href + "/")
+        const response = await instance.get(url.href)
         // console.log("getAllVideos result: ",response.data?.data);
         return response?.data?.data;
     } catch (error) {
