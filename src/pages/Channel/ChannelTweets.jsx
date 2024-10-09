@@ -5,9 +5,9 @@ import { SubscriberSkeleton, Tweet, TweetInput } from "../../components/index";
 import { useGetUserTweets } from "../../hooks/tweet.hook";
 
 function ChannelTweets() {
-  const channelId = useSelector((state) => state.channel.channel?._id);
+  const userId = useSelector((state) => state.channel.channel?._id);
   const currentUserId = useSelector((state) => state.auth.user?._id);
-  const isOwner = channelId === currentUserId;
+  const isOwner = userId === currentUserId;
 
   const {
     data,
@@ -16,7 +16,7 @@ function ChannelTweets() {
     isFetchingNextPage,
     // isFetching,
     isFetched,
-  } = useGetUserTweets(channelId);
+  } = useGetUserTweets(userId);
 
   const { ref, inView } = useInView();
 

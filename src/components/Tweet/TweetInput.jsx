@@ -6,7 +6,7 @@ import LoginPopup from "../LoginPopup";
 function TweetInput() {
     const authStatus = useSelector((state) => state.auth.authStatus);
     const [showLoginPopup, setShowLoginPopup] = useState(false);
-    const [tweet, setTweet] = useState(""); 
+    const [tweetContent, setTweetContent] = useState(""); 
 
     const {mutateAsync: addTweet, isPending} = useCreateTweet();
 
@@ -14,8 +14,8 @@ function TweetInput() {
         if(!authStatus) {
             return setShowLoginPopup(true);
         }
-        await addTweet({ tweet });
-        setTweet("");
+        await addTweet({ tweetContent });
+        setTweetContent("");
     }
 
     if(showLoginPopup) {
@@ -31,8 +31,8 @@ function TweetInput() {
     <div className='w-full mt-3'>
         <textarea 
         className='w-full bg-transparent p-2 border rounded-lg border-slate-300'
-        value={tweet}
-        onChange={(e) => setTweet(e.target.value)}
+        value={tweetContent}
+        onChange={(e) => setTweetContent(e.target.value)}
         ></textarea>
         <button 
         className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'

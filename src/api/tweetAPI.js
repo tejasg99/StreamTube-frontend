@@ -41,9 +41,9 @@ export const deleteTweet = async (tweetId) => {
     }
 }
 
-export const getUserTweets = async (userId) => {
+export const getUserTweets = async ({pageParam = 1, userId}) => {
     try {
-        const { data } = await instance.get(`/tweets/user/${userId}`)
+        const { data } = await instance.get(`/tweets/user/${userId}`, { params: { page: pageParam, limit: 10}})
         toast.success(data?.message)
         return data?.data;
     } catch (error) {

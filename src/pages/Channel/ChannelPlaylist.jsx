@@ -43,7 +43,7 @@ function ChannelPlaylist() {
               </span>
             </p>
             <h5 className="mb-2 font-bold">No playlist created</h5>
-            <p>There are no playlists created on this channel</p>
+            <p>There are no playlists created by this channel</p>
           </div>
         </div>
       )}

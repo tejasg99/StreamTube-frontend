@@ -28,7 +28,7 @@ function PlaylistCard({ playlist, isEditAndDelete = false }) {
 
   return (
     <>
-        <div className='w-full'>
+        <div className='w-[100%]'>
             <div className='relative mb-2 w-full pt-[56%]'>
                 <div className='absolute inset-0'>
                     <img 
