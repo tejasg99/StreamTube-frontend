@@ -13,6 +13,7 @@ function VideoStats() {
   const [deletePopupId, setDeletePopupId] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const { data } = useGetchannelVideos(channelId);
+  console.log("useGetChannelVideos data: ",data);
   const { mutateAsync: toggleVideoPublishStatus } = useTogglePublishStatus();
   const { mutateAsync: deleteVideo, isPending: isDeleting } = useDeleteVideo();
 
@@ -68,6 +69,7 @@ function VideoStats() {
           <tbody>
             {filteredVideos &&
               filteredVideos.map((video, index) => {
+                return (
                 <tr
                   key={video._id}
                   className={`group ${
@@ -112,7 +114,7 @@ function VideoStats() {
                       )}
                       <img
                         className="h-10 w-14 rounded-md object-cover"
-                        src={video?.thumbnail.url}
+                        src={video?.thumbnail}
                         alt={video?.title}
                       />
                       <h3 className="font-semibold text-center">
@@ -146,7 +148,7 @@ function VideoStats() {
                       </button>
                     </div>
                   </td>
-                </tr>;
+                </tr>)
               })}
           </tbody>
         </table>
@@ -177,7 +179,7 @@ function VideoStats() {
                     <div className="flex items-center gap-6">
                       <img
                         className="h-10 w-14 rounded-md object-cover"
-                        src={video?.thumbnail.url}
+                        src={video?.thumbnail}
                         alt={video?.title}
                       />
                       <h3 className="font-semibold">{video?.title}</h3>
@@ -192,9 +194,9 @@ function VideoStats() {
                       <span className="inline-block h-6 w-full rounded-2xl bg-gray-200 duration-200 after:absolute after:bottom-1 after:left-1 after:top-1 after:h-4 after:w-4 after:rounded-full after:bg-black after:duration-200 peer-checked:bg-[#ae7aff] peer-checked:after:left-7"></span>
                     </label>
                   </div>
-                  <div className="flex gap-3">
+                  <div className="flex gap-3 text-sm">
                     <span
-                      className={`inline-block rounded-2xl border px-1.5 py-0.5 ${
+                      className={`inline-block rounded-2xl border px-1 py-0.5 ${
                         video?.isPublished
                           ? "border-green-600 text-green-600"
                           : "border-orange-600 text-orange-600"
@@ -207,7 +209,7 @@ function VideoStats() {
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <p>
+                    <p className="text-sm">
                       Uploaded on{" "}
                       {new Date(video?.createdAt).toLocaleDateString("en-GB")}
                     </p>

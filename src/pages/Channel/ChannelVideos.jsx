@@ -7,7 +7,6 @@ import { VideoCard, VideoCardSkeleton } from "../../components/index";
 function ChannelVideos() {
     // const channelId = useSelector((state) => state.channel.channel?._id);
     const userId = useSelector((state) => state.auth.user?._id);
-    console.log("UserId: ", userId);
     const {
         data: channelVideos,
         isFetching,

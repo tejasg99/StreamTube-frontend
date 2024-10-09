@@ -11,8 +11,6 @@ function ChannelPlaylist() {
     isFetched,
   } = useGetUserPlaylists(channelId);
 
-  console.log(channelPlaylists);
-
   if (isFetching) {
     return <ProgressBar />;
   }

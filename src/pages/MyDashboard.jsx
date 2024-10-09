@@ -82,7 +82,7 @@ function MyDashboard() {
                     {channelStatsItems.map((item, index) => (
                         <div 
                         key={index}
-                        className='p-6 rounded-lg bg-[#131313] flex flex-col items-center hover:bg-[#0e0e0e] transition-colors duration-300'
+                        className='p-4 rounded-lg bg-[#131313] flex flex-col items-center hover:bg-[#0e0e0e] transition-colors duration-300'
                         >
                             <div className='mb-4 flex items-center justify-center h-12 w-12 rounded-full bg-blue-200 text-blue-600'>
                                 {item.icon}

@@ -1,5 +1,4 @@
-import React from 'react'
-import SubscribeButton from './SubscribeButton'
+import SubscribeButton from './SubscribeButton';
 
 function Subscriber({ subscriber }) {
   return (
@@ -7,7 +6,7 @@ function Subscriber({ subscriber }) {
         <div className='flex items-center gap-x-2'>
             <div className='h-14 w-14 shrink-0'>
                 <img 
-                src={subscriber?.avatar?.url} 
+                src={subscriber?.avatar} 
                 alt={subscriber?.username}
                 className='h-full w-full rounded-full object-cover' 
                 />
