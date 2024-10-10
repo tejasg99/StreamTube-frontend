@@ -35,22 +35,30 @@ function Subscriptions() {
         <h1 className="text-2xl font-semibold  my-2">
           Latest Videos from Subscriptions
         </h1>
-        <div className="flex flex-col gap-4 p-4">
+        <div >
           {subscriptions &&
             subscriptions.map((channel) => (
-              <Link
-                to={`/videos/${channel?.subscribedChannel?.latestVideo?._id}`}
-                key={channel?.subscribedChannel._id}
-              >
-                <VideoListCard
-                  video={channel?.subscribedChannel?.latestVideo?.videoFile}
-                  owner={{
-                    avatar: channel?.subscribedChannel?.avatar,
-                    username: channel?.subscribedChannel?.username,
-                    fullName: channel?.subscribedChannel?.fullname,
-                  }}
-                />
-              </Link>
+              <div className="flex flex-col gap-4 py-4 px-2" key={channel?.subscribedChannel._id}>
+                {channel?.subscribedChannel?.latestVideo ? (
+                  <Link
+                    to={`/videos/${channel?.subscribedChannel?.latestVideo?._id}`}
+                  >
+                    <VideoListCard
+                      video={channel?.subscribedChannel?.latestVideo}
+                      owner={{
+                        avatar: channel?.subscribedChannel?.avatar,
+                        username: channel?.subscribedChannel?.username,
+                        fullName: channel?.subscribedChannel?.fullname,
+                      }}
+                    />
+                  </Link>
+                ) : (
+                  <p className="text-lg">
+                    {channel?.subscribedChannel?.fullname} has not uploaded any
+                    videos yet.
+                  </p>
+                )}
+              </div>
             ))}
         </div>
       </div>

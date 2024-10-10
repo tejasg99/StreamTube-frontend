@@ -8,9 +8,10 @@ function History() {
   const [searchTerm, setSearchTerm] = useState("");
   const { data: watchHistory, isLoading } = useGetWatchHistory();
   const { mutateAsync: clearUserWatchHistory } = useClearWatchHistory();
+  console.log("watch history response: ", watchHistory);
 
   const filteredHistory = watchHistory?.filter((video) =>
-    video.video?.title.toLowerCase().includes(searchTerm.toLowerCase())
+    video?.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const clearWatchHistory = async () => {
@@ -38,8 +39,8 @@ function History() {
         <div className="flex flex-col gap-4 p-4">
           {filteredHistory &&
             filteredHistory.map((video) => (
-              <Link to={`/videos/${video.video?._id}`} key={video.video?._id}>
-                <VideoListCard video={video?.video} />
+              <Link to={`/videos/${video?._id}`} key={video?._id}>
+                <VideoListCard video={video} owner={video?.owner}/>
               </Link>
             ))}
         </div>
