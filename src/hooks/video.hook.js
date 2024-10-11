@@ -21,7 +21,7 @@ export const useAllVideos = (options = {}) => {
                 sortType,
                 query,
             );
-            console.log("useAllVideos API response: ", response)
+            // console.log("useAllVideos API response: ", response)
             return response;
         },
         getNextPageParam: (lastPage) => {

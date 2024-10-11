@@ -55,7 +55,7 @@ export const refreshAccessToken = async () => {
 
 export const register = async (data) => {
     // new form object
-    const formData = new formData();
+    const formData = new FormData();
 
     if(!data.get("avatar")){
         toast.error("Avatar is required")

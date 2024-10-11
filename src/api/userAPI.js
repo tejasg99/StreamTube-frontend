@@ -51,7 +51,7 @@ export const updateChannelDesc = async (updateDesc) => {
 }
 
 export const updateAvatar = async (avatarData) => {
-    const formData = new formData();
+    const formData = new FormData();
 
     if(avatarData){
         formData.append("avatar", avatarData)
@@ -68,7 +68,7 @@ export const updateAvatar = async (avatarData) => {
 }
 
 export const updateCoverImage = async (coverImageData) => {
-    const formData = new formData()
+    const formData = new FormData()
 
     if(coverImageData){
         formData.append("coverImage", coverImageData)

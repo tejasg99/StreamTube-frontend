@@ -30,9 +30,9 @@ function VideoForm({
   user,
   isPending,
 }) {
-  const [video, setVideo] = useState(initialVideo?.video?.url || null);
+  const [video, setVideo] = useState(initialVideo?.videoFile || null);
   const [thumbnail, setThumbnail] = useState(
-    initialVideo?.thumbnail?.url || null
+    initialVideo?.thumbnail || null
   );
   const [previewTitle, setPreviewTitle] = useState(initialVideo?.title || "");
   const [previewDescription, setPreviewDescription] = useState(
@@ -58,10 +58,10 @@ function VideoForm({
 
   const handleFormSubmit = async (data) => {
     console.log("handleFormSubmit has been called ", data);
-    if (!video || (!thumbnail && !isEditing)) {
-      toast.error("Please upload both video and thumbnail");
-      return;
-    }
+    // if (!video || (!thumbnail && !isEditing)) {
+    //   toast.error("Please upload both video and thumbnail");
+    //   return;
+    // }
     if (isEditing && !thumbnail) {
       toast.error("Please upload a thumbnail");
       return;
@@ -168,7 +168,7 @@ function VideoForm({
               ) : (
                 <>
                   <p className="text-lg mb-2">
-                    Looks Great😍 right? Click 👇 to upload
+                    Looks Great😍 right? Click 👇
                   </p>
                   <SpecialButton
                     type="submit"

@@ -19,7 +19,7 @@ export const getChannelStats = async (channelId) => {
 }
 
 export const getChannelVideos = async (channelId) => {
-    console.log("getChannelVideos with channelId: ",channelId)
+    // console.log("getChannelVideos with channelId: ",channelId)
     try {
         const { data } = await instance.get(`/dashboard/videos/${channelId}`)
         // console.log("getChannelVideos Result: ", data)

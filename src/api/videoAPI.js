@@ -9,7 +9,7 @@ const instance = axios.create({
 })
 
 export const publishVideo = async (videoData) => {
-    const formData = new formData();
+    const formData = new FormData();
     
     formData.append("videoFile", videoData.videoFile)
     formData.append("title", videoData.title)
@@ -39,14 +39,14 @@ export const togglePublishStatus = async (videoId) => {
     }
 }
 
-export const updateVideo = async (videoId, updateData) => {
-    const formData = new formData();
+export const updateVideo = async (videoId, data) => {
+    const formData = new FormData();
 
-    if(updateData.thumbnail) {
-        formData.append("thumbnail", updateData.thumbnail)
+    if(data.thumbnail) {
+        formData.append("thumbnail", data.thumbnail)
     }
-    formData.append("title", updateData.title)
-    formData.append("description", updateData.description)
+    formData.append("title", data.title)
+    formData.append("description", data.description)
 
     try {
         const { data } = await instance.patch(`/videos/${videoId}`, formData)
