@@ -33,7 +33,7 @@ function Tweet({ tweet, isOwner }) {
         if(res) {
             setIsEditing(false);
         }
-        console.log("edit Tweet");
+        // console.log("edit Tweet");
     };
 
   return (

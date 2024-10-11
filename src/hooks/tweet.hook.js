@@ -20,7 +20,7 @@ export const useCreateTweet = () => {
 export const useUpdateTweet = () => {
     const queryClient = useQueryClient();
     return useMutation({
-        mutationFn: ({tweetId, updateContent}) => updateTweet(tweetId, {content: updateContent}),
+        mutationFn: ({tweetId, tweetContent}) => updateTweet(tweetId, {content: tweetContent}),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["tweets"]})
         }
