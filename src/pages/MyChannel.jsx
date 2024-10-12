@@ -53,7 +53,7 @@ function MyChannel() {
             <div
             className='absolute inset-0 overflow-hidden'
             style={{
-                backgroundImage: `url${channelInfo?.coverImage || defaultCoverImage}`,
+                backgroundImage: `url(${channelInfo?.coverImage || defaultCoverImage})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",

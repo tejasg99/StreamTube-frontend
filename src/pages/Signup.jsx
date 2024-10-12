@@ -56,7 +56,7 @@ function Signup() {
       const registeredUser = await registerUser(formData);
       if (registeredUser) {
         const loggedInUser = await loginUser({
-          usernameOremail: data.email,
+          usernameOrEmail: data.email,
           password: data.password,
         });
         if (loggedInUser) {
