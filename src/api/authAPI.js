@@ -82,7 +82,7 @@ export const register = async (data) => {
 }
 
 export const login = async (formData) => {
-    console.log(formData);
+    // console.log(formData);
     try {
         const { data } = await instance.post("/users/login", formData)
         localStorage.setItem('accessToken', data.data.accessToken)
@@ -90,7 +90,9 @@ export const login = async (formData) => {
         toast.success(data?.message);
         return data?.data?.user;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
+        console.log("Error with data: ", error?.response?.data?.error)
+        console.log("Error without data: ", error)
+        toast.error(error?.response?.data?.message);
         throw error?.response?.data?.error;
     }
 }
