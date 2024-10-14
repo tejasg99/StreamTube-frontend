@@ -25,8 +25,8 @@ export const getVideoComments = async (
         // console.log("getVideoComments response: ",data?.data)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error)
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message)
+        throw error?.response?.data;
     }
 }
 
@@ -36,8 +36,8 @@ export const addComment = async (videoId, comment) => {
         toast.success(data?.message);
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error)
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message)
+        throw error?.response?.data;
     }
 }
 
@@ -47,8 +47,8 @@ export const updateComment = async (commentId, comment) => {
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -58,7 +58,7 @@ export const deleteComment = async (commentId) => {
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }

@@ -49,7 +49,7 @@ export const refreshAccessToken = async () => {
     const { data } = await instance.post("/users/refresh-token")
     return data?.data
   } catch (error) {
-    throw error?.response?.data?.error;
+    throw error?.response?.data;
   }
 }
 
@@ -76,8 +76,8 @@ export const register = async (data) => {
         toast.success(responseData?.message)
         return responseData?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -90,10 +90,9 @@ export const login = async (formData) => {
         toast.success(data?.message);
         return data?.data?.user;
     } catch (error) {
-        console.log("Error with data: ", error?.response?.data?.error)
-        console.log("Error without data: ", error)
+        console.log("Error with data: ", error?.response?.data)
         toast.error(error?.response?.data?.message);
-        throw error?.response?.data?.error;
+        throw error?.response?.data;
     }
 }
 
@@ -105,8 +104,8 @@ export const logout = async () => {
         toast.success(data?.message)
         return data
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -115,7 +114,7 @@ export const currentUser = async () => {
         const { data } = await instance.get("/users/current-user")
         return data?.data?.user
     } catch (error) {
-        throw error?.response?.data?.error
+        throw error?.response?.data;
     }
 }
 
@@ -125,7 +124,7 @@ export const changePassword = async (passwordData) => {
         toast.success(data?.message)
         return data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }

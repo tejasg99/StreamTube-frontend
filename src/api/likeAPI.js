@@ -14,8 +14,8 @@ export const toggleVideoLike = async (videoId) => {
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -24,8 +24,8 @@ export const toggleCommentLike = async (commentId) => {
         const { data } = await instance.post(`/likes/toggle/c/${commentId}`)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -34,8 +34,8 @@ export const toggleTweetLike = async (tweetId) => {
         const { data } = await instance.post(`/likes/toggle/t/${tweetId}`)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -45,7 +45,7 @@ export const getLikedVideos = async () => {
         toast.success(data?.message)
         return data?.data
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error; 
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data; 
     }
 }

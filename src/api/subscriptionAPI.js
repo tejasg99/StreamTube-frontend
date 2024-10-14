@@ -14,8 +14,8 @@ export const toggleSubscription = async (channelId) => {
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -24,7 +24,7 @@ export const getChannelSubscribers = async (channelId) => {
         const { data } = await instance.get(`/subscriptions/c/${channelId}`)
         return data?.data;
     } catch (error) {
-        throw error?.response?.data?.error;
+        throw error?.response?.data;
     }
 }
 
@@ -33,6 +33,6 @@ export const getSubscribedChannels = async (subscriberId) => {
         const { data } = await instance.get(`/subscriptions/u/${subscriberId}`)
         return data?.data;
     } catch (error) {
-        throw error?.response?.data?.error;
+        throw error?.response?.data;
     }
 }

@@ -13,8 +13,8 @@ export const getChannelStats = async (channelId) => {
         const { data } = await instance.get(`/dashboard/stats/${channelId}`)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error)
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message)
+        throw error?.response?.data;
     }
 }
 
@@ -26,8 +26,8 @@ export const getChannelVideos = async (channelId) => {
         // console.log("Video array result: ",data?.data?.docs[0])
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error)
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message)
+        throw error?.response?.data;
     }
 }
 
@@ -37,7 +37,7 @@ export const getChannelInfo = async () => {
         // console.log("getChannelInfo response: ", data?.data)
         return data?.data; 
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }

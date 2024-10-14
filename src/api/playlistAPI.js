@@ -14,8 +14,8 @@ export const createPlaylist = async (playlistData) => {
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -25,8 +25,8 @@ export const updatePlaylist = async (playlistData, playlistId) => {
         toast.success(data?.message);
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -36,8 +36,8 @@ export const addVideoToPlaylist = async (videoId, playlistId) => {
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -47,8 +47,8 @@ export const removeVideoFromPlaylist = async (videoId, playlistId) => {
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -57,8 +57,8 @@ export const getPlaylistById = async (playlistId) => {
         const { data } = await instance.get(`/playlist/${playlistId}`)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -68,8 +68,8 @@ export const getUserPlaylists = async (userId) => {
         toast.success(data?.message);
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -79,8 +79,8 @@ export const deletePlaylist = async (playlistId) => {
         toast.success(data?.message);
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -89,6 +89,6 @@ export const checkVideoInPlaylist = async (playlistId, videoId) => {
         const { data } = await instance.get(`/playlist/check-video/${playlistId}/${videoId}`);
         return data?.data?.isPresent;
    } catch (error) {
-        throw error?.response?.data?.error;     
+        throw error?.response?.data;     
    }
 }

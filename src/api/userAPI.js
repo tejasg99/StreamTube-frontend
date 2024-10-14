@@ -13,8 +13,8 @@ export const getUserChannelProfile = async (username) => {
         const { data } = await instance.get(`/users/c/${username}`)
         return data?.data
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -23,8 +23,8 @@ export const getWatchHistory = async () => {
         const { data } = await instance.get("/users/watch-history")
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -34,8 +34,8 @@ export const updateAccountDetails = async (updateData) => {
         toast.success(data?.message);
         return data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -45,8 +45,8 @@ export const updateChannelDesc = async (updateDesc) => {
         toast.success(data?.message);
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -62,8 +62,8 @@ export const updateAvatar = async (avatarData) => {
         toast.success(data?.message);
         return data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -79,8 +79,8 @@ export const updateCoverImage = async (coverImageData) => {
         toast.success(data?.message)
         return data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -90,8 +90,8 @@ export const clearWatchHistory = async () => {
         toast.success(data?.message);
         return data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 

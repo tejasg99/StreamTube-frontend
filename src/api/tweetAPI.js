@@ -14,8 +14,8 @@ export const createTweet = async (tweetContent) => {
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error)
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message)
+        throw error?.response?.data;
     }
 }
 
@@ -25,8 +25,8 @@ export const updateTweet = async (tweetId, tweetContent) => {
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error)
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message)
+        throw error?.response?.data;
     }
 }
 
@@ -36,8 +36,8 @@ export const deleteTweet = async (tweetId) => {
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error)
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message)
+        throw error?.response?.data;
     }
 }
 
@@ -47,8 +47,8 @@ export const getUserTweets = async ({pageParam = 1, userId}) => {
         toast.success(data?.message)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error)
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message)
+        throw error?.response?.data;
     }
 }
 
@@ -57,8 +57,8 @@ export const getAllTweets = async ({ pageParam = 1, authenticated = true }) => {
         const { data } = await instance.get(`/tweets/${authenticated ? "":"?guest=true"}`, {params: {page: pageParam, limit: 10}});
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error || "Failed to fetch all tweets");
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message || "Failed to fetch all tweets");
+        throw error?.response?.data;
     }
 }
 

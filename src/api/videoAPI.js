@@ -23,8 +23,8 @@ export const publishVideo = async (videoData) => {
         toast.success(data?.message);
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -34,8 +34,8 @@ export const togglePublishStatus = async (videoId) => {
         toast.success(data?.message)
         return data?.data
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -53,8 +53,8 @@ export const updateVideo = async (videoId, data) => {
         toast.success(data?.message)
         return data?.data
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -64,8 +64,8 @@ export const deleteVideo = async (videoId) => {
         toast.success(data?.message);
         return data?.message;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -77,8 +77,8 @@ export const getVideoById = async (videoId, isAuthenticated = true) => {
         console.log("getVideoById response: ", data?.data)
         return data?.data
     } catch (error) {
-        toast.error(error?.response?.data?.error || "Error while fetching video by Id");
-        throw error?.response?.data?.error || "Error: getVideoById";
+        toast.error(error?.response?.data?.message || "Error while fetching video by Id");
+        throw error?.response?.data || "Error: getVideoById";
     }
 }
 
@@ -102,8 +102,8 @@ export const getAllVideos = async (
         // console.log("getAllVideos result: ",response.data?.data);
         return response?.data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
 
@@ -114,7 +114,7 @@ export const getNextVideos = async (videoId) => {
         console.log("getNextVideos response: ", data?.data)
         return data?.data;
     } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error?.response?.data?.error;
+        toast.error(error?.response?.data?.message);
+        throw error?.response?.data;
     }
 }
