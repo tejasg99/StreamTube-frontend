@@ -68,7 +68,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: (
-          
+          <AuthLayout auth={false}>
             <Suspense
               fallback={
                 <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -78,13 +78,13 @@ const router = createBrowserRouter([
             >
               <Home />
             </Suspense>
-          
+          </AuthLayout>
         ),
       },
       {
         path: "/videos/:videoId",
         element: (
-          
+          <AuthLayout auth={false}>
             <Suspense
               fallback={
                 <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
             >
               <VideoDetail />
             </Suspense>
-          
+          </AuthLayout>
         ),
       },
       {
@@ -344,7 +344,7 @@ const router = createBrowserRouter([
       {
         path: "/search/:query",
         element: (
-          <AuthLayout auth={false} pageName={"SearchVideos"}>
+          <AuthLayout auth={false}>
             <Suspense
               fallback={
                 <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -360,7 +360,7 @@ const router = createBrowserRouter([
       {
         path: "/tweets-page",
         element: (
-          
+          <AuthLayout auth={false}>
             <Suspense
               fallback={
                 <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -370,30 +370,15 @@ const router = createBrowserRouter([
             >
               <TweetPage />
             </Suspense>
-          
+          </AuthLayout>
         ),
       },
-      // {
-      //   path: "/upload-video",
-      //   element: (
-      //     <AuthLayout auth={true} pageName={"uploadVideo"}>
-      //       <Suspense
-      //         fallback={
-      //           <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
-      //             Loading...
-      //           </p>
-      //         }
-      //       >
-      //         <UploadVideo />
-      //       </Suspense>
-      //     </AuthLayout>
-      //   )
-      // }
     ],
   },
   {
     path: "/signup",
     element: (
+      <AuthLayout auth={false}>
         <Suspense
           fallback={
             <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -403,11 +388,13 @@ const router = createBrowserRouter([
         >
           <Signup />
         </Suspense>
+      </AuthLayout>
     ),
   },
   {
     path: "/login",
     element: (
+      <AuthLayout auth={false}>
         <Suspense
           fallback={
             <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -417,6 +404,7 @@ const router = createBrowserRouter([
         >
           <Login />
         </Suspense>
+      </AuthLayout>
     ),
   },
   {

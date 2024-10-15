@@ -5,15 +5,14 @@ import { useAllVideos } from "../../hooks/video.hook";
 import { VideoCard, VideoCardSkeleton } from "../../components/index";
 
 function ChannelVideos() {
-    // const channelId = useSelector((state) => state.channel.channel?._id);
-    const userId = useSelector((state) => state.auth.user?._id);
+    const channelId = useSelector((state) => state.channel.channel?._id);
     const {
         data: channelVideos,
         isFetching,
         isFetched,
-    } = useAllVideos({ userId });
+    } = useAllVideos({ userId: channelId });
 
-    // console.log("ChannelVideos Response: ",channelVideos)
+    console.log("ChannelVideos Response: ",channelVideos)
 
     if(isFetching) {
         return (
@@ -32,7 +31,7 @@ function ChannelVideos() {
         )
     }
 
-    if(channelVideos?.pages[0]?.totalDocs === 0) {
+    if(channelVideos?.pages[0]?.docs.length === 0) {
         return (
             <div className='flex justify-center p-4'>
                 <div className='w-full max-w-sm text-center'>

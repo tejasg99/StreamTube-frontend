@@ -36,6 +36,10 @@ function AuthLayout({ auth, children, pageName }) {
         setShowLoginPopup(false);
     };
 
+    if(!auth){
+        return children;
+    }
+
     if(auth && authStatus) {
         return children;
     }
