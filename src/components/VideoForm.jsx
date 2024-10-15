@@ -30,7 +30,7 @@ function VideoForm({
   user,
   isPending,
 }) {
-  const [video, setVideo] = useState(initialVideo?.videoFile || null);
+  const [videoFile, setVideoFile] = useState(initialVideo?.videoFile || null);
   const [thumbnail, setThumbnail] = useState(
     initialVideo?.thumbnail || null
   );
@@ -67,13 +67,13 @@ function VideoForm({
       return;
     }
 
-    const formData = { ...data, video, thumbnail };
+    const formData = { ...data, videoFile, thumbnail };
     const res = await onSubmit(formData);
-    if (res) onreset();
+    if (res) onReset();
   };
 
   const onReset = () => {
-    setVideo(null);
+    setVideoFile(null);
     setThumbnail(null);
     setPreviewTitle("");
     setPreviewDescription("");
@@ -103,14 +103,30 @@ function VideoForm({
         <div className="left-side flex sm:w-7/12 max-w-3xl flex-col gap-y-4 p-4 w-full">
           <div className="sm:h-[24rem]">
             <Dropzone
-              file={isEditing ? thumbnail : video}
-              setFile={isEditing ? setThumbnail : setVideo}
+              file={isEditing ? thumbnail : videoFile}
+              setFile={isEditing ? setThumbnail : setVideoFile}
               type={isEditing ? "image" : "video"}
               isPending={isPending}
             />
           </div>
 
           {isEditing && (
+            <div className="w-full">
+              <label htmlFor="thumbnail" className="mb-1 inline-block">
+                Thumbnail<sup>*</sup>
+              </label>
+              <input
+                id="thumbnail"
+                type="file"
+                accept="image/*"
+                disabled={isPending}
+                className="w-full border p-1 file:mr-4 file:border-none file:bg-blue-400 file:px-3 file:py-1.5"
+                onChange={(e) => setThumbnail(e.target.files[0])}
+              />
+            </div>
+          )}
+
+          {!isEditing && (
             <div className="w-full">
               <label htmlFor="thumbnail" className="mb-1 inline-block">
                 Thumbnail<sup>*</sup>
@@ -143,7 +159,7 @@ function VideoForm({
               onBlur={handleDescriptionBlur}
             />
             {errors.title && (
-              <span className="text-red-500">{errors.description.message}</span>
+              <span className="text-red-500">{errors.description?.message}</span>
             )}
           </div>
         </div>
@@ -153,7 +169,7 @@ function VideoForm({
               Your video will look something like this
             </h3>
             <VideoPreviewCard
-              video={video}
+              video={videoFile}
               thumbnail={thumbnail}
               title={previewTitle}
               description={previewDescription}

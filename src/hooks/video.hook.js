@@ -48,7 +48,7 @@ export const useGetVideoById = (videoId) => {
 export const usePublishVideo = () => {
     const queryClient = useQueryClient();
     return useMutation({
-        mutationFn: (data) => publishVideo(data),
+        mutationFn: (videoData) => publishVideo(videoData),
         onSuccess: () => {
             queryClient.invalidateQueries({
                 queryKey: ["channelStats"],
