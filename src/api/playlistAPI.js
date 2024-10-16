@@ -55,6 +55,8 @@ export const removeVideoFromPlaylist = async (videoId, playlistId) => {
 export const getPlaylistById = async (playlistId) => {
     try {
         const { data } = await instance.get(`/playlist/${playlistId}`)
+        // console.log("getPlaylistById data: ", data);
+        toast.success(data?.message);
         return data?.data;
     } catch (error) {
         toast.error(error?.response?.data?.message);
