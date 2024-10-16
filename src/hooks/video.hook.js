@@ -32,12 +32,12 @@ export const useAllVideos = (options = {}) => {
     });
 }
 
-export const useGetVideoById = (videoId) => {
+export const useGetVideoById = (videoId, isAuthenticated) => {
     const queryClient = useQueryClient();
 
     return useQuery({
         queryKey: ["video", videoId],
-        queryFn: () => getVideoById(videoId),
+        queryFn: () => isAuthenticated? getVideoById(videoId): getVideoById(videoId, false),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["watchHistory"]})
         },

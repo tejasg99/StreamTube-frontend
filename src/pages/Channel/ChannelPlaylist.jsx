@@ -49,7 +49,7 @@ function ChannelPlaylist() {
         {isFetched &&
           channelPlaylists?.length > 0 &&
           channelPlaylists.map((playlist) => (
-            <Link key={playlist._id} to={`/playlists/${playlist?._id}`}>
+            <Link key={playlist._id} to={`/playlist/${playlist?._id}`}>
               <PlaylistCard playlist={playlist} />
             </Link>
           ))}
