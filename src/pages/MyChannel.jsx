@@ -91,7 +91,7 @@ function MyChannel() {
                         )}
 
                         {isOwner && (
-                            <Link to={"/edit-profile/account-details"}>
+                            <Link to={"/edit-profile/edit-account-details"}>
                                 <SpecialButton className='flex items-center gap-3'>
                                     {" "}
                                     <MdModeEditOutline /> Edit

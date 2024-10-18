@@ -10,7 +10,7 @@ function EditProfile() {
     const editProfileItems = [
         {
             name: "Account Details",
-            path: "account-details"
+            path: "edit-account-details"
         },
         {
             name: "Change Password",

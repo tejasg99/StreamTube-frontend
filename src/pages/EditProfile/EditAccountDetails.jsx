@@ -50,21 +50,21 @@ function EditAccountDetails() {
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-y-4 py-4">
+    <div className="flex flex-wrap justify-between py-4">
       {isPending && <ProgressBar />}
-      <div className="w-full sm:w-1/2 lg:w-1/3">
+      <div className="w-full sm:w-1/2 lg:w-1/3 mb-2">
         <h5 className="font-semibold">Account Details</h5>
         <p className="text-gray-300">Update your account details.</p>
       </div>
       <div className="w-full sm:w-1/2 lg:w-2/3">
         <form onSubmit={handleSubmit(onSubmit)} className="rounded-2xl">
-          <div className="flex flex-wrap gap-y-4 p-4 bg-gray-900 rounded-2xl">
+          <div className="flex flex-wrap gap-y-4 p-4 bg-black rounded-2xl">
             <div className="w-full">
               <label htmlFor="fullname">Full Name</label>
               <input
                 type="text"
                 id="fullname"
-                className="w-full rounded-lg bg-gray-700 px-2 py-1.5"
+                className="w-full rounded-lg bg-slate-900 px-2 py-1.5"
                 placeholder="Enter full name"
                 {...register("fullname")}
               />
@@ -78,7 +78,7 @@ function EditAccountDetails() {
               </label>
               <input
                 type="text"
-                className="w-full rounded-lg bg-gray-700 px-2 py-1.5"
+                className="w-full rounded-lg bg-slate-900 px-2 py-1.5"
                 id="email"
                 placeholder="Enter email address"
                 {...register("email")}

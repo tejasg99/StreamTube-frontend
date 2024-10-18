@@ -50,12 +50,12 @@ function History() {
         <div className="relative mb-4">
           <input
             type="text"
-            placeholder="Search videos"
+            placeholder="Search videos by title"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-gray-800 text-white border border-blue-500 rounded-md py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full bg-gray-800 text-white border border-slate-500 rounded-md py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-slate-200"
           />
-          <BiSearch className="absolute h-6 w-6 left-3 top-2.5 text-blue-400" />
+          <BiSearch className="absolute h-6 w-6 left-3 top-2.5 text-white" />
         </div>
 
         <button

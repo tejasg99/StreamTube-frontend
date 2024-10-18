@@ -3,14 +3,14 @@ import { formatDuration, timeAgo } from "../../assets/timeAgo";
 function NextVideoCard({ video, owner }) {
   return (
     <>
-      <div className="w-full gap-x-2 border pr-2 md:flex">
+      <div className="w-full gap-x-2 border-b-[0.5px] border-slate-500 pr-2 pb-1 md:flex">
         <div className="relative mb-2 w-full md:mb-0 md:w-5/12">
           <div className="w-full pt-[56%]">
             <div className="absolute inset-0">
               <img
                 src={video?.thumbnail}
                 alt={video?.title}
-                className="w-full h-full"
+                className="w-full h-full object-cover rounded-lg"
               />
             </div>
             <span className="absolute bottom-1 right-1 inline-block rounded bg-black px-1.5 text-sm">
