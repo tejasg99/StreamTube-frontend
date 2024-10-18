@@ -262,7 +262,7 @@ const router = createBrowserRouter([
       {
         path: "/edit-profile/",
         element: (
-          <AuthLayout auth={true} pageName={"EditProfile"}>
+          <AuthLayout auth={true} pageName={"Settings"}>
             <Suspense
               fallback={
                 <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">
@@ -294,7 +294,7 @@ const router = createBrowserRouter([
           {
             path: "edit-account-details",
             element: (
-              <AuthLayout auth={true} pageName={'Settings'}>
+              <AuthLayout auth={true}>
                 <Suspense
                   fallback={
                     <p className="text-slate-100 text-3xl text-center w-full h-screen bg-slate-900">

@@ -47,9 +47,9 @@ function PlaylistForm({ onClose, isEdit = false, playlist }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-60">
+    <div className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-70">
       <div className="flex min-h-screen items-center justify-center p-4">
-        <div className="relative w-full max-w-md rounded-lg bg-gray-800 p-6">
+        <div className="relative w-full max-w-md rounded-lg bg-black p-6">
           <h3 className="w-full mx-auto text-xl font-bold mb-3">
             {isEdit ? "Edit Playlist" : "Create Playlist"}
           </h3>
@@ -66,7 +66,7 @@ function PlaylistForm({ onClose, isEdit = false, playlist }) {
               </span>
             )}
             <input
-              className="w-full mb-3 rounded-lg border border-transparent bg-gray-700 px-3 py-2 text-white outline-none focus:border-blue-500"
+              className="w-full mb-3 rounded-lg border border-transparent bg-slate-900 px-3 py-2 text-white outline-none focus:border-slate-400"
               id="playlist-name"
               placeholder="Enter playlist name"
               {...register("name")}
@@ -83,14 +83,14 @@ function PlaylistForm({ onClose, isEdit = false, playlist }) {
               </span>
             )}
             <textarea 
-            className="w-full rounded-lg border border-transparent bg-gray-700 px-3 py-2 text-white outline-none focus:border-blue-500" 
+            className="w-full rounded-lg border border-transparent bg-slate-900 px-3 py-2 text-white outline-none focus:border-slate-400" 
             id="playlist-desc"
             placeholder="Enter playlist description"
             {...register("description")}
             />
             <button
             type="submit"
-            className="mx-auto mt-4 rounded-lg bg-blue-500 px-4 py-2 text-white"
+            className="mx-auto mt-4 rounded-lg bg-blue-600 px-4 py-2 text-white"
             >
                 {isEdit ? "Update playlist" : "Create new playlist"}
             </button>
@@ -98,7 +98,7 @@ function PlaylistForm({ onClose, isEdit = false, playlist }) {
           <button
             onClick={onClose}
             type="button"
-            className="absolute top-0 right-0 mt-2 h-8 w-8 flex justify-center items-center mr-2 rounded-full bg-gray-600 p-2 text-white"
+            className="absolute top-0 right-0 mt-2 h-8 w-8 flex justify-center items-center mr-2 rounded-full bg-slate-800 p-2 text-white text-xl"
           >
             &times;
           </button>

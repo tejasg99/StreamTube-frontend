@@ -23,8 +23,8 @@ const Support = () => {
   ];
 
   return (
-    <section className="w-full h-[100%]  flex justify-start items-center">
-      <div className="bg-transparent text-white p-8 rounded-lg shadow-lg w-full">
+    <section className="w-full flex justify-start items-center">
+      <div className="bg-transparent text-white p-8 rounded-lg  w-full">
         <div className="flex flex-col items-center mb-6">
           <div className="bg-blue-600 p-4 rounded-full mb-4">
             <BiSupport className="text-4xl" />

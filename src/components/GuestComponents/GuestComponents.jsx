@@ -63,9 +63,9 @@ export const GuestHistory = () => (
 );
 
 export const GuestSettings = () => (
-  <GuestComponent
+  <GuestComponent 
     title="Customize your experience"
-    description="Login to access and modify your account settings."
+    description="Login to access and modify your account settings"
     icon={FaCog}
   />
 );

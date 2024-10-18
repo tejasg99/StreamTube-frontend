@@ -1,7 +1,7 @@
 function Logo({ className, inline = false, mobile = false }) {
   return (
     <div
-      className={`font-bold text-xl flex items-center justify-center w-full ${className} text-[#FFFFFF] `}
+      className={`font-bold text-xl flex items-center justify-center w-full ${className} text-white `}
     >
       {/* Logo img to be inserted here */}
       <div className="logo w-14 h-14">
