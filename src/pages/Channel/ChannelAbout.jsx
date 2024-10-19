@@ -51,11 +51,11 @@ function ChannelAbout() {
   return (
     <div className='text-white p-6 rounded-lg shadow-lg max-w-md'>
         {" "}
-        <h2 className='text-xl font-semibold mb-4 text-blue-300'>About</h2>
-        <h1 className='text-3xl font-semibold mb-4 text-blue-500'>
+        <h2 className='text-xl font-semibold mb-4 text-slate-50'>About</h2>
+        <h1 className='text-3xl font-semibold mb-4 text-white'>
             {channel?.fullname}
         </h1>
-        <p className=" mb-4 text-blue-500">
+        <p className=" mb-4 text-slate-300">
             {channelAbout?.description || "No description provided for this channel"}
         </p>
         <div className='space-y-3'>
@@ -63,11 +63,11 @@ function ChannelAbout() {
             {channelDetails.map((detail, index) => (
                 <div key={index} className='flex items-center'>
                     {" "}
-                    <detail.icon className="text-blue-400 mr-3 text-xl" />{" "}
+                    <detail.icon className="text-slate-200 mr-3 text-xl" />{" "}
                     {detail.link ? (
                         <Link 
                         to={detail.link}
-                        className='text-purple-200 hover:text-blue-400 transition duration-300'>
+                        className='text-slate-300 hover:text-white transition duration-300'>
                             {detail.text}
                         </Link>
                     ):(

@@ -26,7 +26,7 @@ const Support = () => {
     <section className="w-full flex justify-start items-center">
       <div className="bg-transparent text-white p-8 rounded-lg  w-full">
         <div className="flex flex-col items-center mb-6">
-          <div className="bg-blue-600 p-4 rounded-full mb-4">
+          <div className="bg-[#3d135a] p-4 rounded-full mb-4">
             <BiSupport className="text-4xl" />
           </div>
 
@@ -38,7 +38,7 @@ const Support = () => {
           </h4>
           <div className="flex gap-3 items-center border border-slate-500 rounded-lg px-4 py-2 mt-2">
             <IoIosMail  className="text-white w-8 h-8" />
-            <p className="text-blue-400 text-2xl">{personalInfo.email}</p> 
+            <p className="text-white text-2xl">{personalInfo.email}</p> 
           </div>
         </div>
         <div className="flex justify-center items-center gap-6">
@@ -48,9 +48,9 @@ const Support = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-3 bg-transparent border border-slate-500 rounded-lg hover:bg-blue-700 transition duration-300"
+              className="flex items-center p-3 bg-transparent border border-slate-500 rounded-lg hover:bg-[#3d135a] transition duration-300"
             >
-              <link.icon className="text-blue-400 mr-3 text-xl" />
+              <link.icon className="text-white mr-3 text-xl" />
               <span className="text-lg">{link.name}</span>
             </a>
           ))}

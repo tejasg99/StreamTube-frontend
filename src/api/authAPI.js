@@ -27,7 +27,7 @@ instance.interceptors.response.use(
 
     async(error) => {
         const originalRequest = error.config;
-        if(error?.response?.data?.error === "jwt expired" && !originalRequest._retry) {
+        if(error?.response?.data === "jwt expired" && !originalRequest._retry) {
             originalRequest._retry = true
             try {
                 console.log("Access token is being refreshed")
