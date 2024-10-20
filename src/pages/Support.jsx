@@ -26,7 +26,7 @@ const Support = () => {
     <section className="w-full flex justify-start items-center">
       <div className="bg-transparent text-white p-8 rounded-lg  w-full">
         <div className="flex flex-col items-center mb-6">
-          <div className="bg-[#3d135a] p-4 rounded-full mb-4">
+          <div className="bg-[#6b219f] p-4 rounded-full mb-4">
             <BiSupport className="text-4xl" />
           </div>
 
@@ -48,7 +48,7 @@ const Support = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-3 bg-transparent border border-slate-500 rounded-lg hover:bg-[#3d135a] transition duration-300"
+              className="flex items-center p-3 bg-transparent border border-slate-500 rounded-lg hover:bg-[#6b219f] transition duration-300"
             >
               <link.icon className="text-white mr-3 text-xl" />
               <span className="text-lg">{link.name}</span>

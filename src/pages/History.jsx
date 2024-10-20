@@ -60,7 +60,7 @@ function History() {
 
         <button
           onClick={clearWatchHistory}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+          className="w-full bg-[#6b219f] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
         >
           Clear Watch History
         </button>

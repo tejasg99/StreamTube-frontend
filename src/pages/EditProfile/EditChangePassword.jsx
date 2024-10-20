@@ -61,14 +61,14 @@ function EditChangePassword() {
       </div>
       <div className="w-full sm:w-1/2 lg:w-2/3">
         <form onSubmit={handleSubmit(onSubmit)} className="rounded-2xl">
-          <div className="flex flex-wrap gap-y-4 p-4 bg-gray-900 rounded-2xl">
+          <div className="flex flex-wrap gap-y-4 p-4 bg-black rounded-2xl">
             <div className="w-full">
               <label htmlFor="oldPass" className="mb-1 inline-block">
                 Current Password
               </label>
               <input
                 type="text"
-                className="w-full rounded-lg bg-gray-700 px-2 py-1.5"
+                className="w-full rounded-lg bg-slate-900 px-2 py-1.5"
                 id="oldPass"
                 placeholder="Current Password"
                 {...register("oldPassword")}
@@ -85,7 +85,7 @@ function EditChangePassword() {
               </label>
               <input
                 type="text"
-                className="w-full rounded-lg bg-gray-700 px-2 py-1.5"
+                className="w-full rounded-lg bg-slate-900 px-2 py-1.5"
                 id="newPass"
                 placeholder="New Password"
                 {...register("newPassword")}
@@ -102,7 +102,7 @@ function EditChangePassword() {
                 type="text"
                 id="confirmPass"
                 placeholder="Confirm Password"
-                className="w-full rounded-lg bg-gray-700 px-2 py-1.5"
+                className="w-full rounded-lg bg-slate-900 px-2 py-1.5"
                 {...register("confirmPassword")}
               />
               {errors.confirmPassword && (
