@@ -1,6 +1,6 @@
 const VideoDetailSkeleton = () => {
   return (
-    <div className="flex flex-col lg:flex-row bg-black text-white">
+    <div className="flex flex-col lg:flex-row bg-transparent text-white">
       {/* Main content */}
       <div className="w-full lg:w-3/4 p-4">
         {/* Video player skeleton */}

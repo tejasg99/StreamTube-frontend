@@ -1,6 +1,6 @@
 const MyChannelSkeleton = () => {
   return (
-    <div className="w-full bg-[#0e0e0e  ] text-white animate-pulse">
+    <div className="w-full bg-transparent text-white animate-pulse">
       {/* Banner */}
       <div className="w-full h-48 bg-[#0e0e0e]"></div>
 
@@ -11,7 +11,7 @@ const MyChannelSkeleton = () => {
           <div className="h-6 bg-[#151515] w-1/4 mb-2"></div>
           <div className="h-4 bg-[#151515] w-1/3"></div>
         </div>
-        <div className="w-20 h-8 bg-green-800 rounded"></div>
+        <div className="w-20 h-8 bg-slate-800 rounded"></div>
       </div>
 
       {/* Navigation */}

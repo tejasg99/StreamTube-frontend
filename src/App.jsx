@@ -26,7 +26,7 @@ function App() {
   if(isLoading || isFetching) {
     // Loading skeleton to be added here
     return (
-      <div className="h-screen overflow-y-auto bg-[#0e0e0e] text-white">
+      <div className="h-screen overflow-y-auto text-white [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
         <HeaderSkeleton />
         <div className="flex min-h-[calc(100vh-66px)] sm:min-h-[calc(100vh-82px)]">
           <SidebarSkeleton />

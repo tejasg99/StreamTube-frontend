@@ -119,12 +119,11 @@ function Header() {
             </ul>
           </IconContext.Provider>
           <div className="mb-8 mt-auto flex w-full flex-wrap gap-4 px-4 sm:mb-0 sm:mt-0 sm:items-center sm:px-0">
-              <Button className="bg-green-800" onClick={handleUploadVideo}>
-                Upload Video
-              </Button>
-
               {authStatus && userData && (
                 <>
+                  <Button className="bg-blue-600" onClick={handleUploadVideo}>
+                    Upload Video
+                  </Button>
                   <Button 
                   className="bg-red-700 hover:bg-red-500"
                   onClick={handleLogout}
@@ -154,11 +153,18 @@ function Header() {
 
               {!authStatus && (
                 <>
-                  <Link to="/login">
-                  <button className="bg-blue-800 mr-1 rounded px-3 py-2 text-center text-white transition-all duration-150 ease-in-out active:translate-x-[5px] active:translate-y-[5px] active:shadow-[0px_0px_0px_0px_#4f4e4e] sm:w-auto ">
-                    Log in
-                  </button>
-                  </Link>
+                  <div className="flex gap-4">
+                    <Link to="/login">
+                      <button className="bg-blue-600 mr-1 rounded px-3 py-2 text-center text-white transition-all duration-150 ease-in-out active:translate-x-[5px] active:translate-y-[5px] active:shadow-[0px_0px_0px_0px_#4f4e4e] sm:w-auto ">
+                        Log in
+                      </button>
+                    </Link>
+                    <Link to={"/signup"}>
+                      <button className="bg-green-600 mr-1 rounded px-3 py-2 text-center text-white transition-all duration-150 ease-in-out active:translate-x-[5px] active:translate-y-[5px] active:shadow-[0px_0px_0px_0px_#4f4e4e] sm:w-auto ">
+                          Sign up
+                      </button>
+                    </Link>                  
+                  </div>
                 </>
               )}
           </div>

@@ -52,10 +52,10 @@ function AuthLayout({ auth, children, pageName }) {
         }
         const GuestComponent = guestComponents[pageName];
         return GuestComponent ? (
-            <div className='relative overflow-hidden w-full justify-center flex bg-black'>
+            <div className='relative overflow-hidden w-full justify-center flex bg-transparent'>
                 <GuestComponent />
                 <div className='absolute left-1/2 bottom-[30%] transform -translate-x-1/2'>
-                    <button className='bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-400 transition duration-300 text-lg font-semibold'
+                    <button className='bg-[#6b219f] text-white px-6 py-3 rounded-full hover:bg-blue-400 transition duration-300 text-lg font-semibold'
                     onClick={() => setShowLoginPopup(true)}
                     >
                         Log in
