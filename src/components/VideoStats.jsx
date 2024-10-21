@@ -55,8 +55,8 @@ function VideoStats() {
           size={20}
         />
       </div>
-      <div className="overflow-x-auto rounded-lg md:block hidden">
-        <table className="w-full min-w-[1200px] text-white">
+      <div className="overflow-x-clip rounded-lg md:block hidden">
+        <table className="w-full text-white">
           <thead>
             <tr>
               <th className="p-4">Status</th>

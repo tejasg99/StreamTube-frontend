@@ -12,10 +12,15 @@ function DeletePopup({ onCancel, onDeleteConfirm, isDeleting, type }) {
         ) : (
           <>
             <h1 className="text-2xl font-bold mb-4">Delete {type}</h1>
-            <p className="text-xl font-medium mb-10">
-              Are you sure you want to delete this {type} ? Once deleted, you
-              will not be able to recover it.
-            </p>
+            <div className="flex flex-wrap gap-2 mb-10 justify-center">
+              <p className="text-xl font-semibold">
+                Are you sure you want to delete this {type} ? 
+              </p>
+              <p className="text-sm font-normal text-slate-200">
+              Once deleted, you will not be able to recover it.
+              </p>              
+            </div>
+
             <div className="flex gap-3 justify-center">
               <button
                 onClick={onDeleteConfirm}

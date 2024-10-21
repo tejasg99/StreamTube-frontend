@@ -58,7 +58,7 @@ function MyDashboard() {
 
   return (
     <>
-        <div className='mx-auto flex w-full max-w-7xl flex-col gap-y-6 px-4 py-8 sm:px-6 lg:px-8 bg-[#0e0e0e] text-white'>
+        <div className='mx-auto flex w-full max-w-5xl flex-col gap-y-6 px-4 py-8 sm:px-6 lg:px-8 bg-[#0e0e0e] text-white'>
             <div className='flex flex-wrap justify-between items-center gap-4'>
                 <div>
                     <h1 className='text-xl sm:text-2xl font-bold'>
