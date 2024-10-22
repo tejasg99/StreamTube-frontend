@@ -13,7 +13,7 @@ export default function VideoPreviewCard({
   const videoSrc = video instanceof File ? URL.createObjectURL(video) : video;
 
   return (
-    <div className="w-full bg-gray-800 rounded-lg shadow-md overflow-hidden text-white">
+    <div className="w-full bg-slate-950 rounded-lg shadow-md overflow-hidden text-white  border-2 border-dotted border-slate-500">
       <div className="relative mb-2 w-full pt-[56%]">
         <div className="absolute inset-0">
           {thumbnailSrc && videoSrc ? (
@@ -24,8 +24,8 @@ export default function VideoPreviewCard({
             />
           ) : (
             <div className="h-full w-full flex flex-col items-center justify-center">
-              <BsCardImage className="w-full h-full" />
-              <p className="mt-2">
+              <BsCardImage className="w-full h-full text-slate-50" />
+              <p className="mt-2 px-4">
                 Please upload both Video and Thumbnail to see Preview
               </p>
             </div>

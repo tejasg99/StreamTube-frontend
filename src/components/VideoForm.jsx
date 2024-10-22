@@ -100,7 +100,7 @@ function VideoForm({
   return (
     <form onSubmit={handleSubmit(handleFormSubmit)}>
       <div className="w-full flex justify-center items-center flex-col sm:flex-row">
-        <div className="left-side flex sm:w-7/12 max-w-3xl flex-col gap-y-4 p-4 w-full">
+        <div className="left-side flex sm:w-7/12 max-w-2xl flex-col gap-y-4 p-4 w-full">
           <div className="sm:h-[24rem]">
             <Dropzone
               file={isEditing ? thumbnail : videoFile}
@@ -120,7 +120,7 @@ function VideoForm({
                 type="file"
                 accept="image/*"
                 disabled={isPending}
-                className="w-full border p-1 file:mr-4 file:border-none file:bg-blue-400 file:px-3 file:py-1.5"
+                className="w-full border p-1 file:mr-4 file:border-none file:bg-[#6b219f] file:px-3 file:py-1.5 file:text-white"
                 onChange={(e) => setThumbnail(e.target.files[0])}
               />
             </div>
@@ -136,7 +136,7 @@ function VideoForm({
                 type="file"
                 accept="image/*"
                 disabled={isPending}
-                className="w-full border p-1 file:mr-4 file:border-none file:bg-blue-400 file:px-3 file:py-1.5"
+                className="w-full border p-1 file:mr-4 file:border-none file:bg-[#6b219f] file:px-3 file:py-1.5 file:text-white"
                 onChange={(e) => setThumbnail(e.target.files[0])}
               />
             </div>

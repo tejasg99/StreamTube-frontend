@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function DropDown({ handleEdit, handleDelete }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +23,7 @@ function DropDown({ handleEdit, handleDelete }) {
       <div className="relative inline-block w-full " ref={dropDownRef}>
       <button
           onClick={() => handleMenu()}
-          className="relative z-10 ml-8 block p-2 text-gray-700 bg-white border border-transparent rounded-md  focus:border-blue-500 focus:ring-opacity-40  focus:ring-blue-300 focus:outline-none"
+          className="relative z-10 ml-8 block p-2 text-white bg-transparent border border-slate-50 rounded-md  focus:border-[#6b219f] focus:ring-opacity-40  focus:ring-[#6b219f] focus:outline-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -35,17 +35,17 @@ function DropDown({ handleEdit, handleDelete }) {
           </svg>
         </button>
         {isMenuOpen && (
-            <div className="absolute right-8 top-2 z-20 w-24 mt-2 origin-top-right bg-white rounded-md shadow-xl">
+            <div className="absolute right-8 top-2 z-20 w-24 mt-2 origin-top-right bg-slate-800 rounded-md shadow-xl">
                 <button 
                 onClick={handleEdit}
-                className="w-full h-full block px-4 py-2 text-sm text-gray-600 capitalize transition-colors duration-300 transform hover:bg-gray-100"
+                className="w-full h-full block px-4 py-2 text-sm text-white capitalize transition-colors duration-300 transform hover:bg-slate-50 hover:text-black"
                 >
                     Edit
                 </button>
                 <hr className="border-gray-200"/>
                 <button
                 onClick={handleDelete}
-                className="w-full h-full block px-4 py-2 text-sm text-gray-600 capitalize transition-colors duration-300 transform hover:bg-gray-100"
+                className="w-full h-full block px-4 py-2 text-sm text-white capitalize transition-colors duration-300 transform hover:bg-slate-50 hover:text-black"
                 >
                     Delete
                 </button>

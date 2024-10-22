@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { useDropzone } from "react-dropzone";
 import VideoPlayer from "./VideoPlayer";
 import { AiOutlineCloudUpload } from "react-icons/ai";
@@ -78,10 +78,10 @@ const Dropzone = forwardRef(({ type, setFile, file, isPending }, ref) => {
   return (
     <div
       {...getRootProps()}
-      className="w-full h-full border-2 border-dashed px-4 py-12 text-center"
+      className="w-full h-full border-2 border-dashed px-2 py-8 text-center"
     >
       <input ref={ref} className="sr-only" {...getInputProps()} />
-      <span className="mb-4 inline-block w-24 rounded-full bg-blue-300 p-4 text-blue-500">
+      <span className="mb-4 inline-block w-24 rounded-full bg-[#6b219f] p-4 text-white">
         <AiOutlineCloudUpload className="w-full h-full" />
       </span>
       <h6 className="mb-2 font-semibold">
@@ -95,7 +95,7 @@ const Dropzone = forwardRef(({ type, setFile, file, isPending }, ref) => {
       )}
       <label
         onClick={open}
-        className="group/btn mt-4 inline-flex w-auto cursor-pointer items-center gap-x-2 bg-blue-400 px-3 py-2 text-center font-bold text-black shadow-[5px_5px_0px_0px_#4f4e4e] transition-all duration-150 ease-in-out active:translate-x-[5px] active:translate-y-[5px] active:shadow-[0px_0px_0px_0px_#4f4e4e]"
+        className="group/btn mt-4 inline-flex w-auto cursor-pointer items-center gap-x-2 bg-[#6b219f] px-3 py-2 text-center font-bold text-white shadow-[5px_5px_0px_0px_#4f4e4e] transition-all duration-150 ease-in-out active:translate-x-[5px] active:translate-y-[5px] active:shadow-[0px_0px_0px_0px_#4f4e4e]"
       >
         Select Files
       </label>
