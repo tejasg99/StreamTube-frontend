@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useGetUserChannelInformation } from "../hooks/user.hook";
-import { Outlet, useParams, Link, NavLink } from 'react-router-dom';
+import { Outlet, useParams, NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { MdModeEditOutline } from "react-icons/md";
 import { setChannel } from "../features/channelSlice";
-import { SpecialButton, SubscribeButton, MychannelSkeleton} from "../components/index";
+import { SubscribeButton, MychannelSkeleton, UpdateDescriptionPopup } from "../components/index";
 import defaultCoverImage from "../assets/defaultCoverImage.jpg";
 
 function MyChannel() {
@@ -13,6 +13,11 @@ function MyChannel() {
     const ownerUsername = useSelector((state) => state.auth.user?.username);
     const isOwner = ownerUsername === username ? true : false;
     const { data: channelInfo, isFetching} = useGetUserChannelInformation(username);
+    const [showUpdateDesc, setShowUpdateDesc] = useState(false);
+
+    const handleEdit = () => {
+        setShowUpdateDesc((prev) => !prev);
+    }   
 
     useEffect(() => {
       if(channelInfo) {
@@ -91,12 +96,12 @@ function MyChannel() {
                         )}
 
                         {isOwner && (
-                            <Link to={"/edit-profile/edit-account-details"}>
-                                <SpecialButton className='flex items-center gap-3'>
-                                    {" "}
-                                    <MdModeEditOutline /> Edit
-                                </SpecialButton>
-                            </Link>
+                            <button
+                            onClick={handleEdit}
+                            className='bg-blue-500 text-white w-16 p-1 flex items-center justify-center gap-2 rounded-md'
+                            >
+                                <MdModeEditOutline /> Edit                                
+                            </button> 
                         )}
                     </div>
                 </div>
@@ -117,6 +122,7 @@ function MyChannel() {
             </ul>
             <Outlet />
         </div>
+        {showUpdateDesc && <UpdateDescriptionPopup onClose={handleEdit}/>}
     </section>
   )
 }

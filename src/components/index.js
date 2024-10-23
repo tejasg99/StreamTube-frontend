@@ -49,6 +49,7 @@ import VideoListCardSkeleton from "./Skeletons/VideoListCardSkeleton.jsx";
 import VideoStatsSkeleton from "./Skeletons/VideoStatsSkeleton.jsx";
 import VideoListCard from "./VideoCards/VideoListCard.jsx";
 import EditVideo from "./Editvideo/EditVideo.jsx";
+import UpdateDescriptionPopup from "./UpdateDescriptionPopup.jsx";
 
 export {
     Header,
@@ -103,4 +104,5 @@ export {
     VideoStatsSkeleton,
     VideoListCard,
     EditVideo,
+    UpdateDescriptionPopup
 }
