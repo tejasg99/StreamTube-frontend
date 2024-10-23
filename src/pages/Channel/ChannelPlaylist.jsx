@@ -45,7 +45,7 @@ function ChannelPlaylist() {
           </div>
         </div>
       )}
-      <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-4 p-4">
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-4 p-2">
         {isFetched &&
           channelPlaylists?.length > 0 &&
           channelPlaylists.map((playlist) => (

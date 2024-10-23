@@ -52,7 +52,7 @@ function Playlist() {
   }
 
   return (
-    <section className="w-full pb-[70px] sm:ml-[70px] sm:pb-0 lg:ml-0">
+    <section className="w-full pb-[70px] sm:pb-0 lg:ml-0">
       <div className="flex flex-wrap gap-x-4 gap-y-10 p-4 xl:flex-nowrap">
         <div className="w-full shrink-0 sm:max-w-md xl:max-w-sm">
           <PlaylistCard playlist={playlist[0]} isEditAndDelete={true} />

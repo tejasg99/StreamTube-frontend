@@ -12,7 +12,7 @@ function ChannelVideos() {
         isFetched,
     } = useAllVideos({ userId: channelId });
 
-    console.log("ChannelVideos Response: ",channelVideos)
+    // console.log("ChannelVideos Response: ",channelVideos)
 
     if(isFetching) {
         return (

@@ -8,7 +8,6 @@ function History() {
   const [searchTerm, setSearchTerm] = useState("");
   const { data: watchHistory, isLoading } = useGetWatchHistory();
   const { mutateAsync: clearUserWatchHistory } = useClearWatchHistory();
-  console.log("watch history response: ", watchHistory);
 
   const filteredHistory = watchHistory?.filter((video) =>
     video?.title.toLowerCase().includes(searchTerm.toLowerCase())

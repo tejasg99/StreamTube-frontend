@@ -20,14 +20,14 @@ function LoginForm({ onLogin }) {
     const { register, handleSubmit, formState: {errors} } = useForm({ resolver: zodResolver(schema)})
 
     //Login hook 
-    const { mutateAsync: login, isPending, isError, error } = useLogin();
+    const { mutateAsync: login, isPending } = useLogin();
 
     const loginUser = async (data) => {
-        console.log("Login attempt with data: ", data)
+        // console.log("Login attempt with data: ", data)
 
         try {
             const session = await login(data);
-            console.log("Login successful, session data: ", session)
+            // console.log("Login successful, session data: ", session)
             if(session) {
                 onLogin(session);
             }
