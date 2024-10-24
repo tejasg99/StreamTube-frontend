@@ -50,20 +50,11 @@ function UpdateDescriptionPopup({ onClose,}) {
   return (
     <>
       <div className="fixed inset-0  flex justify-center items-center bg-black bg-opacity-75 z-50">
-        <div className="bg-black border border-slate-500 rounded-lg p-5 text-white text-center w-1/3 h-fit sm:w-auto">
+        <div className=" relative bg-black border border-slate-500 rounded-lg p-7 text-white text-center w-auto h-auto">
           {isPending && <ProgressBar />}
-          <div className="flex w-full justify-between items-center gap-2">
-          <h1 className="text-xl font-bold mb-4">
+          <h1 className="text-lg font-bold mb-4">
             Update Channel Description
           </h1>            
-          <button
-            onClick={onClose}
-            type="button"
-            className="h-6 w-6 flex justify-center items-center rounded-full bg-white p-2 text-black text-xl"
-          >
-            &times;
-          </button>
-          </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <label className="mb-1 inline-block" htmlFor="desc">
               Description
@@ -89,19 +80,26 @@ function UpdateDescriptionPopup({ onClose,}) {
                 type="button"
                 onClick={() => reset()}
                 disabled={isPending}
-                className="bg-blue-500 text-white w-24 py-1 px-2 font-semibold text-lg rounded"
+                className="bg-slate-600 text-white w-24 py-1 px-2 font-normal text-lg rounded"
               >
                 Reset
               </button>
               <button
                 type="submit"
                 disabled={isPending}
-                className="bg-slate-800 text-white w-24 py-1 px-2 font-semibol text-lg rounded"
+                className="bg-blue-600 text-white w-24 py-1 px-2 font-semibold text-lg rounded"
               >
                 Update
               </button>
             </div>
           </form>
+          <button
+            onClick={onClose}
+            type="button"
+            className="absolute top-0 right-1 mt-2 h-6 w-6 flex justify-center items-center rounded-full bg-white p-2 text-black text-xl"
+          >
+            &times;
+        </button>
         </div>
       </div>
     </>

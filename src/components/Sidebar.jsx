@@ -87,7 +87,7 @@ function Sidebar() {
                   {item.icon}
                 </span>
                 <span
-                  className={`block sm:hidden sm:group-hover:inline ${
+                  className={`hidden md:block sm:group-hover:inline ${
                     fullSize ? "lg:inline" : ""
                   }`}
                 >

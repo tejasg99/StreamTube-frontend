@@ -1,10 +1,7 @@
 const MyChannelSkeleton = () => {
   return (
     <div className="w-full bg-transparent text-white animate-pulse">
-      {/* Banner */}
       <div className="w-full h-48 bg-[#0e0e0e]"></div>
-
-      {/* Profile section */}
       <div className="flex items-center p-4">
         <div className="w-20 h-20 rounded-full bg-[#151515] mr-4"></div>
         <div className="flex-1">
@@ -13,8 +10,6 @@ const MyChannelSkeleton = () => {
         </div>
         <div className="w-20 h-8 bg-slate-800 rounded"></div>
       </div>
-
-      {/* Navigation */}
       <div className="flex border-b border-[#151515] mb-4">
         {["Videos", "Playlist", "Tweets", "Subscribers"].map((item, index) => (
           <div key={index} className="px-4 py-2">
@@ -22,8 +17,6 @@ const MyChannelSkeleton = () => {
           </div>
         ))}
       </div>
-
-      {/* Video grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
         {[...Array(6)].map((_, index) => (
           <div key={index} className="aspect-video bg-[#0e0e0e] rounded-lg">

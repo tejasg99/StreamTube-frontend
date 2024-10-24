@@ -15,6 +15,7 @@ function MyChannel() {
     const { data: channelInfo, isFetching} = useGetUserChannelInformation(username);
     const [showUpdateDesc, setShowUpdateDesc] = useState(false);
 
+    
     const handleEdit = () => {
         setShowUpdateDesc((prev) => !prev);
     }   
@@ -79,9 +80,9 @@ function MyChannel() {
                     <p className='text-sm text-gray-400'>@{channelInfo?.username}</p>
                     <p className='text-sm text-gray-400 '>
                         {channelInfo?.subscribersCount} Subscribers · {" "}
-                        {channelInfo?.subscribedToCount} Subscribed
+                        {channelInfo?.channelsSubscribedToCount} Subscribed
                     </p>
-                    <p>
+                    <p className='text-lg text-gray-200'>
                         {channelInfo?.description || `This channel does not have a description yet`}
                     </p>
                 </div>
@@ -106,7 +107,7 @@ function MyChannel() {
                     </div>
                 </div>
             </div>
-            <ul className='no-scrollbar sticky top-[66px] z-[2]  flex flex-row justify-between text-wrap overflow-auto border-b-2 border-gray-400 bg-[#0e0e0e] py-2 sm:top-[82px] mb-4 sm:mb-2'>
+            <ul className='no-scrollbar sticky top-[66px] z-[2]  flex flex-row justify-between text-wrap overflow-auto border-b border-slate-400 bg-black py-2 sm:top-[82px] mb-4 sm:mb-2'>
                 {channelItems.map((item, index) => (
                     <li key={index} className='w-full'> 
                         <NavLink

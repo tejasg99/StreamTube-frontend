@@ -24,7 +24,6 @@ function App() {
   },[userData, isFetching, dispatch, user])
   
   if(isLoading || isFetching) {
-    // Loading skeleton to be added here
     return (
       <div className="h-screen overflow-y-auto text-white [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
         <HeaderSkeleton />
@@ -54,3 +53,4 @@ function App() {
 export default App;
 
 // bg-gradient color original - #3d135a
+//[background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]
