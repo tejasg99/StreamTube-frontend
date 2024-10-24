@@ -63,7 +63,7 @@ function ChannelSubscribers() {
 
   return (
     <div className="flex flex-col gap-y-4 py-4">
-      <div className="relative mb-2 rounded-lg bg-white py-2 pl-8 pr-3 text-black">
+      <div className="relative mb-2 rounded-lg bg-slate-800 py-2 pl-8 pr-3 text-white">
         <span className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -66,7 +66,7 @@ function MyChannel() {
             }}
             ></div>
         </div>
-        <div className='px-4 pb-4'>
+        <div className='px-2 pb-2'>
             <div className='flex flex-wrap gap-4 pb-4 pt-6'>
                 <span className='relative -mt-12 inline-block h-28 w-28 shrink-0 overflow-hidden rounded-full border-2'>
                     <img 

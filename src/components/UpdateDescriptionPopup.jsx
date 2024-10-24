@@ -56,9 +56,6 @@ function UpdateDescriptionPopup({ onClose,}) {
             Update Channel Description
           </h1>            
           <form onSubmit={handleSubmit(onSubmit)}>
-            <label className="mb-1 inline-block" htmlFor="desc">
-              Description
-            </label>
             <textarea
               className="w-full rounded-lg bg-slate-800 px-2 py-1.5 text-white"
               rows="4"
@@ -75,7 +72,7 @@ function UpdateDescriptionPopup({ onClose,}) {
               </p>
             )}
 
-            <div className="flex gap-3 justify-center">
+            <div className="flex gap-3 justify-center mt-2">
               <button
                 type="button"
                 onClick={() => reset()}
@@ -96,7 +93,7 @@ function UpdateDescriptionPopup({ onClose,}) {
           <button
             onClick={onClose}
             type="button"
-            className="absolute top-0 right-1 mt-2 h-6 w-6 flex justify-center items-center rounded-full bg-white p-2 text-black text-xl"
+            className="absolute top-0 right-1 mt-2 h-6 w-6 flex justify-center items-center rounded-full bg-slate-800 p-[4px] text-white text-xl"
           >
             &times;
         </button>

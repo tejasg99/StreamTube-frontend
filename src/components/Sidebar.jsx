@@ -34,7 +34,7 @@ function Sidebar() {
       name: "Watch History",
       path: "/watch-history",
       icon: <LuHistory />,
-      onMobile: true,
+      onMobile: false,
     },
     {
       name: "My Channel",
@@ -52,7 +52,7 @@ function Sidebar() {
       name: "Subscriptions",
       path: "/subscriptions",
       icon: <LiaUserCheckSolid />,
-      onMobile: true,
+      onMobile: false,
     },
     {
       name: "Tweets",
@@ -87,7 +87,7 @@ function Sidebar() {
                   {item.icon}
                 </span>
                 <span
-                  className={`hidden md:block sm:group-hover:inline ${
+                  className={`block sm:hidden sm:group-hover:inline ${
                     fullSize ? "lg:inline" : ""
                   }`}
                 >
