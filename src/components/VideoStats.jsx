@@ -56,7 +56,7 @@ function VideoStats() {
         />
       </div>
       <div className="overflow-x-clip rounded-lg md:block hidden">
-        <table className="w-full text-white">
+        <table className="w-full text-white bg-black rounded-lg">
           <thead>
             <tr>
               <th className="p-4">Status</th>
@@ -124,7 +124,7 @@ function VideoStats() {
                   </td>
                   <td className="px-4 py-3 whitespace-nowrap">
                     <div className="flex justify-center gap-4">
-                      <span className="inline-block rounded-xl bg-green-200 px-1.5 py-0.5 text-green-700">
+                      <span className="inline-block rounded-xl border border-slate-300 bg-transparent px-1.5 py-0.5 text-white">
                         {video?.likesCount} likes
                       </span>
                     </div>
