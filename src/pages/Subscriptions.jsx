@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 function Subscriptions() {
   const userId = useSelector((state) => state.auth.user._id);
   const { data: subscriptions } = useGetSubscribedChannels(userId);
-  console.log(subscriptions);
 
   if (subscriptions && subscriptions.length === 0) {
     return (

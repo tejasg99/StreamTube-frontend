@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import { IconContext } from "react-icons";
-// import Footer from "./Footer/Footer";
 import { AiOutlineHome } from "react-icons/ai";
 import { BiLike } from "react-icons/bi";
 import { LuHistory } from "react-icons/lu";

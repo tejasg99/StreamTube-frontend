@@ -13,6 +13,8 @@ import { RxQuestionMarkCircled } from "react-icons/rx";
 import { CiSettings } from "react-icons/ci";
 import { IconContext } from "react-icons";
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import { LuHistory } from "react-icons/lu";
+import { LiaUserCheckSolid } from "react-icons/lia";
 
 function Header() {
   const navigate = useNavigate();
@@ -45,6 +47,16 @@ function Header() {
       name: "My Channel",
       path: `/channel/${userData?.username}/videos`,
       icon: <GoDeviceCameraVideo />,
+    },
+    {
+      name: "Watch History",
+      path: "/watch-history",
+      icon: <LuHistory />,
+    },
+    {
+      name: "Subscriptions",
+      path: "/subscriptions",
+      icon: <LiaUserCheckSolid />,
     },
     {
       name: "Support",
@@ -86,9 +98,9 @@ function Header() {
         <div
           className={`fixed inset-y-0 right-0 flex w-full max-w-xs shrink-0 ${
             sideBar ? "translate-x-0" : "translate-x-full"
-          } flex-col border-l border-white bg-[#0e0e0e] duration-200 sm:static sm:ml-4 sm:w-auto sm:translate-x-0 sm:border-none`}
+          } flex-col border-l border-slate-500 bg-black duration-200 sm:static sm:ml-4 sm:w-auto sm:translate-x-0 sm:border-none`}
         >
-          <div className="relative flex w-full h-[4rem] items-center justify-end border-b border-white px-4 py-2 sm:hidden">
+          <div className="relative flex w-full h-[4rem] items-center justify-end border-b border-slate-500 px-4 py-2 sm:hidden">
             <button
               onClick={handleSideBar}
               className="inline-block cursor-pointer"
@@ -105,7 +117,7 @@ function Header() {
                 >
                   <Link 
                   to={item.path}
-                  className="flex w-full items-center justify-start gap-x-4 border border-white px-4 py-1.5 text-left hover:bg-blue-400 hover:text-black focus:border-blue-500 focus:bg-blue-400 focus:text-black"
+                  className="flex w-full items-center justify-start gap-x-4 border border-slate-400 px-4 py-1.5 text-left hover:bg-blue-400 hover:text-black focus:border-blue-500 focus:bg-blue-400 focus:text-black"
                   >
                     <span
                     className="inline-block w-full max-w-[20px] group-hover:mr-4 lg:mr-4"
