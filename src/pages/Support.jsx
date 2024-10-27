@@ -36,12 +36,17 @@ const Support = () => {
           <h4 className="text-2xl font-bold text-center mb-2 ">
             Owner: {personalInfo.name}
           </h4>
-          <div className="flex gap-3 items-center border border-slate-500 rounded-lg px-4 py-2 mt-2">
-            <IoIosMail  className="text-white w-8 h-8" />
-            <p className="text-white text-2xl">{personalInfo.email}</p> 
+          <div className="flex gap-3 items-center border border-slate-500 rounded-lg px-4 py-2 mt-2 hover:bg-[#6b219f]">
+            <IoIosMail className="text-white w-8 h-8" />
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="text-white sm:text-xl md:text-2xl"
+            >
+              {personalInfo.email}
+            </a>
           </div>
         </div>
-        <div className="flex justify-center items-center gap-6">
+        <div className="flex flex-wrap justify-center items-center gap-6">
           {links.map((link) => (
             <a
               key={link.name}

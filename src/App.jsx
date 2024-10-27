@@ -36,7 +36,7 @@ function App() {
   }
 
   if(error) {
-    console.log("Error fetching user data: ", error)
+    console.log("Guest user")
   }
 
   return (

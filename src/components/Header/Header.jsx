@@ -65,7 +65,7 @@ function Header() {
     },
     {
       name: "Settings",
-      path: "/edit-profile/personal-info",
+      path: "/edit-profile/edit-account-details",
       icon: <CiSettings />,
     },
   ];
