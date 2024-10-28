@@ -17,6 +17,14 @@ const Dropzone = forwardRef(({ type, setFile, file, isPending }, ref) => {
   const { getRootProps, isDragReject, getInputProps, open } = useDropzone({
     accept: fileTypes[type],
     onDrop: (acceptedFiles) => {
+      const maxSize = 10 * 1024 * 1024; // 10 MB in bytes
+      const validFile = acceptedFiles[0];
+
+      if (validFile.size > maxSize) {
+        alert("File size should be under 10 MB");
+        return;
+      }
+
       setFile(
         Object.assign(acceptedFiles[0], {
           url: URL.createObjectURL(acceptedFiles[0]),
