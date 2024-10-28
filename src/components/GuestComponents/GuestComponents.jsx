@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 
 export const GuestComponent = ({ title, description, icon: Icon }) => (
-  <div className="flex flex-col items-center justify-center p-4 text-center bg-transparent">
+  <div className="flex flex-col items-center justify-center p-4 text-center bg-transparent mb-4">
     <Icon className="w-16 h-16 text-[#6b219f] mb-4" />
     <h2 className="text-2xl font-bold mb-2 text-white ">{title}</h2>
     <p className="text-gray-300 mb-8 max-w-md">{description}</p>

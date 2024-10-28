@@ -112,7 +112,7 @@ function Comment({ comment }) {
           </div>
         </div>
       </div>
-      <hr className="my-4 border-white" />
+      <hr className="my-4 border-slate-300" />
     </>
   );
 }

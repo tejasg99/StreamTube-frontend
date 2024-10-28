@@ -60,13 +60,13 @@ function CommentBox({ videoId }) {
   return (
     <div className='w-full'>
         <button 
-        className="w-full rounded-lg border p-4 text-left duration-200 hover:bg-white/5 focus:bg-white/5 sm:hidden"
+        className="w-full rounded-lg border border-slate-500 p-4 text-left duration-200 hover:bg-white/5 focus:bg-white/5 sm:hidden"
         onClick={() => setIsOpen(!isOpen)}
         > 
             <h6 className='font-semibold'>{totalComments} Comments</h6>
         </button>
         <div 
-        className={`fixed inset-x-0 bottom-0 z-[60] h-[calc(100%-69px)] overflow-auto rounded-t-lg border bg-[#0e0e0e] p-4 transition-transform duration-300 sm:static sm:h-auto sm:max-h-[500px] sm:transform-none lg:max-h-none ${isOpen ? "translate-y-0" : "translate-y-full sm:translate-y-0"}`}
+        className={`fixed inset-x-0 bottom-0 z-[60] h-[calc(100%-69px)] overflow-auto rounded-t-lg border border-slate-500 bg-[#0e0e0e] p-4 transition-transform duration-300 sm:static sm:h-auto sm:max-h-[500px] sm:transform-none lg:max-h-none ${isOpen ? "translate-y-0" : "translate-y-full sm:translate-y-0"}`}
         >
             <div className='flex justify-between items-center mb-4'>
                 <h6 className='font-semibold'>{totalComments} Comments</h6>
@@ -92,7 +92,7 @@ function CommentBox({ videoId }) {
                     <SpecialButton type='submit'>Comment</SpecialButton>
                 </form>
             </div>
-            <hr className='my-4 border-white'/>
+            <hr className='my-4 border-slate-300'/>
             <div>
                 {isFetched && comments?.pages.map((page, index)=> (
                     <React.Fragment key={index}>

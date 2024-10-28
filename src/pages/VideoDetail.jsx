@@ -80,7 +80,7 @@ function VideoDetail() {
           </div>
 
           <div
-            className="group mb-4 w-full rounded-lg border p-4 duration-200 hover:bg-white/5 focus:bg-white/5"
+            className="group mb-4 w-full rounded-lg border border-slate-500 p-4 duration-200 hover:bg-white/5 focus:bg-white/5"
             tabIndex="0"
           >
             <div className="flex flex-wrap gap-y-2">
@@ -134,7 +134,7 @@ function VideoDetail() {
                 />
               )}
             </div>
-            <hr className="my-4 border-white" />
+            <hr className="my-4 border-slate-300" />
             <div className="h-5 overflow-hidden group-focus:h-auto">
               <p className="text-sm">{video && video.description}</p>
             </div>
