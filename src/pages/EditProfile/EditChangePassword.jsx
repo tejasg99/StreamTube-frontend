@@ -4,7 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
 import { useChangePassword } from "../../hooks/auth.hook";
 
-const schema = z.object({
+const schema = z
+.object({
   oldPassword: z
     .string()
     .min(6, { message: "Password must be at least 6 characters" }),
@@ -14,6 +15,10 @@ const schema = z.object({
   confirmPassword: z
     .string()
     .min(6, { message: "Password must be at least 6 characters" }),
+})
+.refine((data) => data.newPassword === data.confirmPassword,{
+  message: "New password and confirm passwords must match",
+  path: ["confirmPassword"], //Error will appear under this field
 });
 
 function EditChangePassword() {
