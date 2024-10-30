@@ -63,7 +63,7 @@ function Sidebar() {
 
   return (
     <aside
-      className={`z-40 group absolute md:border-r border-y md:border-t-0 border-slate-500 inset-x-0 bottom-0 w-full shrink-0 md:bg-transparent bg-black bg-opacity-90 px-2 py-2 sm:absolute sm:inset-y-0 sm:max-w-[70px] sm:py-6 sm:hover:max-w-[250px] ${
+      className={`z-40 group absolute md:border-r border-y md:border-t-0 border-slate-500 inset-x-0 bottom-0 w-full shrink-0 md:bg-transparent bg-black bg-opacity-80 px-2 py-2 sm:absolute sm:inset-y-0 sm:max-w-[70px] sm:py-6 sm:hover:max-w-[250px] ${
         fullSize ? "lg:sticky lg:max-w-[250px]" : ""
       }`}
     >

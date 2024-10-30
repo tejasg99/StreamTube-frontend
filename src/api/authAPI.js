@@ -28,7 +28,8 @@ instance.interceptors.response.use(
     async(error) => {
         // console.log("authAPI error thrown: ",error)
         const originalRequest = error.config;
-        if(error?.response?.data?.message === 'jwt expired' && !originalRequest._retry) {
+        const errorMessage = error?.response?.data?.message;
+        if((errorMessage === 'jwt expired' || errorMessage === 'jwt malformed') && !originalRequest._retry) {
             originalRequest._retry = true
             try {
                 console.log("Access token is being refreshed")

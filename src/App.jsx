@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <div className="h-screen overflow-y-auto bg-[#0e0e0e] text-white scrollbar-hide [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
+    <div className="h-screen overflow-y-auto text-white scrollbar-hide [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
       <Header />
       <div className="flex min-h-[calc(100vh-66px)] sm:min-h-[calc(100vh-82px)]">
         <Sidebar />

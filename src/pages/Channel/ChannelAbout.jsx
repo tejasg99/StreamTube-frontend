@@ -1,6 +1,5 @@
 import {
     FaEnvelope,
-    FaGlobe,
     FaVideo,
     FaEye,
     FaTwitter,
@@ -21,11 +20,6 @@ function ChannelAbout() {
             text: `${channelAbout?.email}`,
             link: `mailto:${channelAbout?.email}`
         },
-        // {
-        //     icon: FaGlobe,
-        //     text: `_SiteLink_/channel/${channelAbout?.username}`,
-        //     link: `_SiteLink_/channel/${channelAbout?.username}`
-        // },
         {
             icon: FaVideo,
             text: `${channelAbout?.totalVideos} Videos`,
