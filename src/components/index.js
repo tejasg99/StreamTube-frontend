@@ -11,7 +11,7 @@ import AuthLayout from "./AuthLayout.jsx";
 import { TitleInput, DescriptionInput } from "./TitleAndDescriptionInput.jsx";
 import DropDown from "./DropDown.jsx";
 import VideoPlayer from "./VideoPlayer.jsx"
-import Dropzone from "./DropZone.jsx";
+import Dropzone from "./Dropzone.jsx";
 import VideoCard from "./VideoCard.jsx";
 import VideoPreviewCard from "./VideoPreviewCard.jsx";
 import VideoForm from "./VideoForm.jsx";
