@@ -54,15 +54,13 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-        <Suspense
-          fallback={
-            <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-              Loading...
-            </p>
-          }
-        >
-          <App />
-        </Suspense>
+      <Suspense
+        fallback={
+          <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
+        }
+      >
+        <App />
+      </Suspense>
     ),
     children: [
       {
@@ -71,9 +69,7 @@ const router = createBrowserRouter([
           <AuthLayout auth={false}>
             <Suspense
               fallback={
-                <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                  Loading...
-                </p>
+                <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
               }
             >
               <Home />
@@ -87,9 +83,7 @@ const router = createBrowserRouter([
           <AuthLayout auth={false}>
             <Suspense
               fallback={
-                <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                  Loading...
-                </p>
+                <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
               }
             >
               <VideoDetail />
@@ -103,9 +97,7 @@ const router = createBrowserRouter([
           <AuthLayout auth={true} pageName={"LikedVideos"}>
             <Suspense
               fallback={
-                <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                  Loading...
-                </p>
+                <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
               }
             >
               <LikedVideos />
@@ -119,9 +111,7 @@ const router = createBrowserRouter([
           <AuthLayout auth={true} pageName={"History"}>
             <Suspense
               fallback={
-                <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                  Loading...
-                </p>
+                <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
               }
             >
               <History />
@@ -135,9 +125,7 @@ const router = createBrowserRouter([
           <AuthLayout auth={true} pageName={"MyChannel"}>
             <Suspense
               fallback={
-                <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                  Loading...
-                </p>
+                <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
               }
             >
               <MyChannel />
@@ -151,9 +139,7 @@ const router = createBrowserRouter([
               <AuthLayout auth={true} pageName={"ChannelVideos"}>
                 <Suspense
                   fallback={
-                    <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                      Loading...
-                    </p>
+                    <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
                   }
                 >
                   <ChannelVideos />
@@ -167,9 +153,7 @@ const router = createBrowserRouter([
               <AuthLayout auth={true} pageName={"ChannelTweets"}>
                 <Suspense
                   fallback={
-                    <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                      Loading...
-                    </p>
+                    <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
                   }
                 >
                   <ChannelTweets />
@@ -183,9 +167,7 @@ const router = createBrowserRouter([
               <AuthLayout auth={true} pageName={"ChannelPlaylists"}>
                 <Suspense
                   fallback={
-                    <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                      Loading...
-                    </p>
+                    <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
                   }
                 >
                   <ChannelPlaylist />
@@ -199,9 +181,7 @@ const router = createBrowserRouter([
               <AuthLayout auth={true} pageName={"ChannelSubscribers"}>
                 <Suspense
                   fallback={
-                    <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                      Loading...
-                    </p>
+                    <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
                   }
                 >
                   <ChannelSubscribers />
@@ -215,9 +195,7 @@ const router = createBrowserRouter([
               <AuthLayout auth={true} pageName={"ChannelAbout"}>
                 <Suspense
                   fallback={
-                    <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                      Loading...
-                    </p>
+                    <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
                   }
                 >
                   <ChannelAbout />
@@ -233,9 +211,7 @@ const router = createBrowserRouter([
           <AuthLayout auth={true} pageName={"MyDashboard"}>
             <Suspense
               fallback={
-                <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                  Loading...
-                </p>
+                <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
               }
             >
               <MyDashboard />
@@ -249,9 +225,7 @@ const router = createBrowserRouter([
           <AuthLayout auth={true} pageName={"Subscriptions"}>
             <Suspense
               fallback={
-                <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                  Loading...
-                </p>
+                <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
               }
             >
               <Subscriptions />
@@ -265,9 +239,7 @@ const router = createBrowserRouter([
           <AuthLayout auth={true} pageName={"Settings"}>
             <Suspense
               fallback={
-                <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                  Loading...
-                </p>
+                <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
               }
             >
               <EditProfile />
@@ -281,9 +253,7 @@ const router = createBrowserRouter([
               <AuthLayout auth={true} pageName={"EditChangePassword"}>
                 <Suspense
                   fallback={
-                    <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                      Loading...
-                    </p>
+                    <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
                   }
                 >
                   <EditChangePassword />
@@ -297,9 +267,7 @@ const router = createBrowserRouter([
               <AuthLayout auth={true}>
                 <Suspense
                   fallback={
-                    <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                      Loading...
-                    </p>
+                    <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
                   }
                 >
                   <EditAccountDetails />
@@ -315,9 +283,7 @@ const router = createBrowserRouter([
           <AuthLayout auth={true} pageName={"Playlist"}>
             <Suspense
               fallback={
-                <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                  Loading...
-                </p>
+                <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
               }
             >
               <Playlist />
@@ -328,17 +294,13 @@ const router = createBrowserRouter([
       {
         path: "/support",
         element: (
-          
-            <Suspense
-              fallback={
-                <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                  Loading...
-                </p>
-              }
-            >
-              <Support />
-            </Suspense>
-          
+          <Suspense
+            fallback={
+              <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
+            }
+          >
+            <Support />
+          </Suspense>
         ),
       },
       {
@@ -347,9 +309,7 @@ const router = createBrowserRouter([
           <AuthLayout auth={false}>
             <Suspense
               fallback={
-                <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                  Loading...
-                </p>
+                <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
               }
             >
               <SearchVideos />
@@ -363,9 +323,7 @@ const router = createBrowserRouter([
           <AuthLayout auth={false}>
             <Suspense
               fallback={
-                <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-                  Loading...
-                </p>
+                <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
               }
             >
               <TweetPage />
@@ -381,9 +339,7 @@ const router = createBrowserRouter([
       <AuthLayout auth={false}>
         <Suspense
           fallback={
-            <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-              Loading...
-            </p>
+            <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
           }
         >
           <Signup />
@@ -397,9 +353,7 @@ const router = createBrowserRouter([
       <AuthLayout auth={false}>
         <Suspense
           fallback={
-            <p className="text-slate-100 text-3xl text-center w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
-              Loading...
-            </p>
+            <div className="w-full h-screen [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]"></div>
           }
         >
           <Login />
@@ -413,8 +367,8 @@ const router = createBrowserRouter([
       <Suspense fallback={<p className="bg-slate-900 text-white">Loading</p>}>
         <Healthcheck />
       </Suspense>
-    )
-  }
+    ),
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
