@@ -73,7 +73,7 @@ export const getVideoById = async (videoId, isAuthenticated = true) => {
     try {
         const url = `/videos/${videoId}${isAuthenticated ? "": "?guest=true"}`;
         const { data } = await instance.get(url)
-        toast.success(data?.message)
+        // toast.success(data?.message)
         // console.log("getVideoById response: ", data?.data)
         return data?.data
     } catch (error) {
@@ -110,7 +110,7 @@ export const getAllVideos = async (
 export const getNextVideos = async (videoId) => {
     try {
         const { data } = await instance.get(`/videos/next/${videoId}`)
-        toast.success(data?.message);
+        // toast.success(data?.message);
         // console.log("getNextVideos response: ", data?.data)
         return data?.data;
     } catch (error) {
