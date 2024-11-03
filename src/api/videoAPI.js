@@ -73,8 +73,6 @@ export const getVideoById = async (videoId, isAuthenticated = true) => {
     try {
         const url = `/videos/${videoId}${isAuthenticated ? "": "?guest=true"}`;
         const { data } = await instance.get(url)
-        // toast.success(data?.message)
-        // console.log("getVideoById response: ", data?.data)
         return data?.data
     } catch (error) {
         toast.error(error?.response?.data?.message || "Error while fetching video by Id");
@@ -99,7 +97,6 @@ export const getAllVideos = async (
         if(query) url.searchParams.set("query", query)
         if(limit) url.searchParams.set("limit", limit)
         const response = await instance.get(url.href)
-        // console.log("getAllVideos result: ",response.data?.data);
         return response?.data?.data;
     } catch (error) {
         toast.error(error?.response?.data?.message);
@@ -110,8 +107,6 @@ export const getAllVideos = async (
 export const getNextVideos = async (videoId) => {
     try {
         const { data } = await instance.get(`/videos/next/${videoId}`)
-        // toast.success(data?.message);
-        // console.log("getNextVideos response: ", data?.data)
         return data?.data;
     } catch (error) {
         toast.error(error?.response?.data?.message);
