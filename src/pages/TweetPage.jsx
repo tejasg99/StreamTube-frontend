@@ -14,7 +14,6 @@ function TweetPage() {
         hasNextPage,
         isFetchingNextPage,
         isFetching,
-        // isFetched,
         isRefetching,
     } = useGetAllTweets(authStatus);
 

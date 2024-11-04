@@ -58,10 +58,6 @@ function VideoForm({
 
   const handleFormSubmit = async (data) => {
     console.log("handleFormSubmit has been called ", data);
-    // if (!video || (!thumbnail && !isEditing)) {
-    //   toast.error("Please upload both video and thumbnail");
-    //   return;
-    // }
     if (isEditing && !thumbnail) {
       toast.error("Please upload a thumbnail");
       return;

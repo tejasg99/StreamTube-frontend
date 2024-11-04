@@ -26,7 +26,6 @@ instance.interceptors.response.use(
     (response) => response,
 
     async(error) => {
-        // console.log("authAPI error thrown: ",error)
         const originalRequest = error.config;
         const errorMessage = error?.response?.data?.message;
         if((errorMessage === 'jwt expired' || errorMessage === 'jwt malformed') && !originalRequest._retry) {
@@ -84,7 +83,6 @@ export const register = async (data) => {
 }
 
 export const login = async (formData) => {
-    // console.log(formData);
     try {
         const { data } = await instance.post("/users/login", formData)
         localStorage.setItem('accessToken', data.data.accessToken)

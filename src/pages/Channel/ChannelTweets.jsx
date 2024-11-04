@@ -14,7 +14,6 @@ function ChannelTweets() {
     hasNextPage,
     fetchNextPage,
     isFetchingNextPage,
-    // isFetching,
     isFetched,
   } = useGetUserTweets(userId);
 

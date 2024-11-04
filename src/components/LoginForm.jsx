@@ -23,11 +23,8 @@ function LoginForm({ onLogin }) {
     const { mutateAsync: login, isPending } = useLogin();
 
     const loginUser = async (data) => {
-        // console.log("Login attempt with data: ", data)
-
         try {
             const session = await login(data);
-            // console.log("Login successful, session data: ", session)
             if(session) {
                 onLogin(session);
             }

@@ -26,16 +26,11 @@ function EditChangePassword() {
     register,
     handleSubmit,
     reset,
-    // watch,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(schema),
     mode: "onChange",
   });
-
-//   const oldPassword = watch("oldPassword");
-//   const newPassword = watch("newPassword");
-//   const confirmPassword = watch("confirmPassword");
 
   const { mutateAsync: changePassword, isPending } = useChangePassword();
 
@@ -49,7 +44,6 @@ function EditChangePassword() {
       oldPassword,
       newPassword,
     };
-    // console.log(submitData);
     const res = await changePassword(submitData);
     if (res) {
       reset();

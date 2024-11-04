@@ -13,7 +13,6 @@ function VideoStats() {
   const [deletePopupId, setDeletePopupId] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const { data } = useGetchannelVideos(channelId);
-  // console.log("useGetChannelVideos data: ",data);
   const { mutateAsync: toggleVideoPublishStatus } = useTogglePublishStatus();
   const { mutateAsync: deleteVideo, isPending: isDeleting } = useDeleteVideo();
 

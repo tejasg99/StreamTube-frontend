@@ -22,7 +22,6 @@ export const getVideoComments = async (
         
         const { data } = await instance.get(url.href)
         toast.success(data?.message)
-        // console.log("getVideoComments response: ",data?.data)
         return data?.data;
     } catch (error) {
         toast.error(error?.response?.data?.message)

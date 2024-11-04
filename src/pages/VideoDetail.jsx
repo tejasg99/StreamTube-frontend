@@ -25,7 +25,6 @@ function VideoDetail() {
     data: video,
     isFetching,
     isRefetching,
-    // isSuccess,
   } = useGetVideoById(videoId, authStatus);
   const isOwner = video?.owner?._id === userId ? true : false;
 

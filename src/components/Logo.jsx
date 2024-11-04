@@ -3,7 +3,6 @@ function Logo({ className, inline = false, mobile = false }) {
     <div
       className={`font-bold text-xl flex items-center justify-center w-full ${className} text-white `}
     >
-      {/* Logo img to be inserted here */}
       <div className="logo w-14 h-14">
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -10,7 +10,7 @@ export const TitleInput = forwardRef(
             </label>
             <input 
             type="text"
-            ref={ref} //forward Ref to parent
+            ref={ref} 
             id="title"
             className="w-full border bg-transparent px-2 py-2 outline-none"
             {...props}
