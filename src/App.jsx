@@ -25,7 +25,7 @@ function App() {
   
   if(isLoading || isFetching) {
     return (
-      <div className="h-screen overflow-y-auto text-white [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
+      <div className="h-screen overflow-y-auto text-white bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
         <HeaderSkeleton />
         <div className="flex min-h-[calc(100vh-66px)] sm:min-h-[calc(100vh-82px)]">
           <SidebarSkeleton />
@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <div className="h-screen overflow-y-auto text-white scrollbar-hide [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
+    <div className="h-screen overflow-y-auto text-white scrollbar-hide bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
       <Header />
       <div className="flex min-h-[calc(100vh-66px)] sm:min-h-[calc(100vh-82px)]">
         <Sidebar />
@@ -54,3 +54,4 @@ export default App;
 
 // bg-gradient color original - #3d135a
 //[background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]
+// h-screen overflow-y-auto text-white scrollbar-hide [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]
