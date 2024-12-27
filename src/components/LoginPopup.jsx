@@ -3,6 +3,7 @@ import { FiX } from "react-icons/fi";
 import { LoginForm } from "./index.js";
 import { useDispatch } from 'react-redux';
 import { setUser } from "../features/authSlice.js"
+import { Link } from 'react-router-dom';
 
 function LoginPopup({onClose, loginTo}) {
     const dispatch = useDispatch();
@@ -33,9 +34,9 @@ function LoginPopup({onClose, loginTo}) {
             <div className='mt-4 text-center'>
                 <p className='text-sm text-gray-400'>
                     Don&apos;t have an account? {" "}
-                    <a href="/signup" className='text-blue-400 hover:text-blue-300'>
+                    <Link to="/signup" className='text-blue-400 hover:text-blue-300'>
                         Sign Up
-                    </a>
+                    </Link>
                 </p>
             </div>
         </div>
