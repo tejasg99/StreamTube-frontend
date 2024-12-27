@@ -70,7 +70,7 @@ function Signup() {
   };
 
   return (
-    <div className="h-screen overflow-y-auto bg-[#0e0e0e] text-white flex justify-center items-center [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#6b219f_100%)]">
+    <div className="h-screen overflow-y-auto bg-black text-white flex justify-center items-center">
       <div className="mx-auto my-8 flex w-full max-w-sm flex-col p-4 border border-slate-500 rounded-lg">
         <div className="w-full flex justify-center items-center">
           <Logo
